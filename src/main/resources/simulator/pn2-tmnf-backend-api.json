@@ -1,0 +1,7018 @@
+{
+  "total": 402,
+  "p": 1,
+  "ps": 100,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 100,
+    "total": 402
+  },
+  "effortTotal": 3849,
+  "issues": [
+    {
+      "key": "0776dfc5-19fa-4d2e-8a39-8e6979520c10",
+      "rule": "java:S3776",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 32,
+      "hash": "7a1143d6df432e62211cf08b61c08614",
+      "textRange": {
+        "startLine": 32,
+        "endLine": 32,
+        "startOffset": 15,
+        "endOffset": 22
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 38,
+                "endLine": 38,
+                "startOffset": 8,
+                "endOffset": 11
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 39,
+                "endLine": 39,
+                "startOffset": 75,
+                "endOffset": 76
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 42,
+                "endLine": 42,
+                "startOffset": 61,
+                "endOffset": 62
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 43,
+                "endLine": 43,
+                "startOffset": 61,
+                "endOffset": 62
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 46,
+                "endOffset": 47
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 51,
+                "endLine": 51,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 51,
+                "endLine": 51,
+                "startOffset": 31,
+                "endOffset": 33
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 52,
+                "endLine": 52,
+                "startOffset": 45,
+                "endOffset": 46
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 53,
+                "endLine": 53,
+                "startOffset": 20,
+                "endOffset": 21
+              },
+              "msg": "+3 (incl 2 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 53,
+                "endLine": 53,
+                "startOffset": 49,
+                "endOffset": 50
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 55,
+                "endLine": 55,
+                "startOffset": 20,
+                "endOffset": 21
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 54,
+                "endLine": 54,
+                "startOffset": 50,
+                "endOffset": 52
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+              "textRange": {
+                "startLine": 56,
+                "endLine": 56,
+                "startOffset": 10,
+                "endOffset": 14
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "mai899vh@prestigein.com",
+      "tags": [
+        "brain-overload"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-09-25T02:30:48+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "5e7d154f-c318-4379-88c3-f07fb1e3178e",
+      "rule": "java:S1659",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 37,
+      "hash": "2a375bdcf20b74252664b1012bb2b6e4",
+      "textRange": {
+        "startLine": 37,
+        "endLine": 37,
+        "startOffset": 31,
+        "endOffset": 41
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Declare \"extRatSum2\" on a separate line.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "convention",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-02-02T10:02:28+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": true,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FORMATTED",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "066d4332-2c88-433a-9804-e3883b29c99f",
+      "rule": "java:S3358",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 52,
+      "hash": "ba8ecffb839d561c1a1cdf9312092685",
+      "textRange": {
+        "startLine": 52,
+        "endLine": 55,
+        "startOffset": 51,
+        "endOffset": 57
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "confusing"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-02-02T10:02:28+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "30af11c1-9433-4ac6-9d3b-e4222de79b29",
+      "rule": "java:S3358",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 53,
+      "hash": "0e74ec01eb4ed4792783bc080329c854",
+      "textRange": {
+        "startLine": 53,
+        "endLine": 53,
+        "startOffset": 22,
+        "endOffset": 57
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "confusing"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-02-02T10:02:28+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "d37ce483-8e47-414f-8713-829cf0e9365d",
+      "rule": "java:S3358",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 54,
+      "hash": "28cc11122598fd2527056fc621087732",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 55,
+        "startOffset": 22,
+        "endOffset": 57
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "confusing"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-02-02T10:02:28+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "18c9f738-abda-4ce3-929e-c17e25a74b65",
+      "rule": "java:S3776",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 29,
+      "hash": "7a1143d6df432e62211cf08b61c08614",
+      "textRange": {
+        "startLine": 29,
+        "endLine": 29,
+        "startOffset": 15,
+        "endOffset": 22
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 35,
+                "endLine": 35,
+                "startOffset": 8,
+                "endOffset": 11
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 36,
+                "endLine": 36,
+                "startOffset": 75,
+                "endOffset": 76
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 39,
+                "endLine": 39,
+                "startOffset": 61,
+                "endOffset": 62
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 40,
+                "endLine": 40,
+                "startOffset": 61,
+                "endOffset": 62
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 42,
+                "endLine": 42,
+                "startOffset": 46,
+                "endOffset": 47
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 8,
+                "endOffset": 10
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 47,
+                "endOffset": 49
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 48,
+                "endLine": 48,
+                "startOffset": 45,
+                "endOffset": 46
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 49,
+                "endLine": 49,
+                "startOffset": 20,
+                "endOffset": 21
+              },
+              "msg": "+3 (incl 2 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 49,
+                "endLine": 49,
+                "startOffset": 49,
+                "endOffset": 50
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 51,
+                "endLine": 51,
+                "startOffset": 20,
+                "endOffset": 21
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 50,
+                "endOffset": 52
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.",
+      "effort": "14min",
+      "debt": "14min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "brain-overload"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-08-10T09:41:39+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "e29c4e8d-6fa5-4a77-ba35-72b9903dc80b",
+      "rule": "java:S1659",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 34,
+      "hash": "2a375bdcf20b74252664b1012bb2b6e4",
+      "textRange": {
+        "startLine": 34,
+        "endLine": 34,
+        "startOffset": 31,
+        "endOffset": 41
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Declare \"extRatSum2\" on a separate line.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-08-10T09:41:39+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": true,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FORMATTED",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "9d733a69-9383-4655-9cf4-daef5a308d9f",
+      "rule": "java:S3358",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 48,
+      "hash": "ba8ecffb839d561c1a1cdf9312092685",
+      "textRange": {
+        "startLine": 48,
+        "endLine": 51,
+        "startOffset": 51,
+        "endOffset": 59
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "confusing"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-08-10T09:41:39+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "8946934e-3539-4bb4-a14d-4c0e741e24c6",
+      "rule": "java:S3358",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 49,
+      "hash": "0e74ec01eb4ed4792783bc080329c854",
+      "textRange": {
+        "startLine": 49,
+        "endLine": 49,
+        "startOffset": 22,
+        "endOffset": 57
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "confusing"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-08-10T09:41:39+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "90f2bb8f-6565-48e5-8309-2d75d825719d",
+      "rule": "java:S3358",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "project": "Pamnas2-POC",
+      "line": 50,
+      "hash": "28cc11122598fd2527056fc621087732",
+      "textRange": {
+        "startLine": 50,
+        "endLine": 51,
+        "startOffset": 22,
+        "endOffset": 59
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "confusing"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-08-10T09:41:39+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "fff958d6-2575-40b4-98a2-94702728cb33",
+      "rule": "java:S1192",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+      "project": "Pamnas2-POC",
+      "line": 85,
+      "hash": "75675c6ef4e606eb8bbc96b39a69f71e",
+      "textRange": {
+        "startLine": 85,
+        "endLine": 85,
+        "startOffset": 37,
+        "endOffset": 58
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 37,
+                "endOffset": 58
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+              "textRange": {
+                "startLine": 86,
+                "endLine": 86,
+                "startOffset": 42,
+                "endOffset": 63
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+              "textRange": {
+                "startLine": 102,
+                "endLine": 102,
+                "startOffset": 37,
+                "endOffset": 58
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+              "textRange": {
+                "startLine": 103,
+                "endLine": 103,
+                "startOffset": 42,
+                "endOffset": 63
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Define a constant instead of duplicating this literal \"2023/01/01 00:00:00\" 4 times.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "design"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-04-10T10:27:42+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "DISTINCT",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "16dffddc-052e-4164-ad0f-0a0ac9aa925e",
+      "rule": "java:S1602",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+      "project": "Pamnas2-POC",
+      "line": 123,
+      "hash": "d1499c1a5bd48ca22b58cd6513db2e65",
+      "textRange": {
+        "startLine": 123,
+        "endLine": 123,
+        "startOffset": 34,
+        "endOffset": 35
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Remove useless curly braces around statement (sonar.java.source not set. Assuming 8 or greater.)",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "java8"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-01-12T03:07:58+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "31f061ce-1904-4cd7-bede-1827fb6e62a9",
+      "rule": "java:S125",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+      "project": "Pamnas2-POC",
+      "line": 170,
+      "hash": "c8bdb38ae629924f4dc1cf4524a8001b",
+      "textRange": {
+        "startLine": 170,
+        "endLine": 170,
+        "startOffset": 14,
+        "endOffset": 61
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "This block of commented-out lines of code should be removed.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "ph827nam@prestigein.com",
+      "tags": [
+        "unused"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-07-28T09:03:57+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "fdcead7c-6d0e-4be9-985b-10678a6f5d1c",
+      "rule": "java:S125",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+      "project": "Pamnas2-POC",
+      "line": 190,
+      "hash": "52e4a5875be95d725763a8bb942144d3",
+      "textRange": {
+        "startLine": 190,
+        "endLine": 190,
+        "startOffset": 10,
+        "endOffset": 11
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "This block of commented-out lines of code should be removed.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "ph827nam@prestigein.com",
+      "tags": [
+        "unused"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-07-28T09:03:57+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "2719f815-0ea3-4b39-97a5-b79d1dbfbe12",
+      "rule": "java:S1611",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/ListenerConfig.java",
+      "project": "Pamnas2-POC",
+      "line": 32,
+      "hash": "48133e0077da7644f8ba3f3dd6432eff",
+      "textRange": {
+        "startLine": 32,
+        "endLine": 32,
+        "startOffset": 59,
+        "endOffset": 60
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Remove the parentheses around the \"syncInfo\" parameter (sonar.java.source not set. Assuming 8 or greater.)",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "dtrung@prestigein.com",
+      "tags": [
+        "java8"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-04-26T08:41:43+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "83968acd-5c4a-43db-a406-f007e92d870e",
+      "rule": "java:S1118",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/filter/CookieContext.java",
+      "project": "Pamnas2-POC",
+      "line": 3,
+      "hash": "9c01df0b7759daa5f440800c3863fe47",
+      "textRange": {
+        "startLine": 3,
+        "endLine": 3,
+        "startOffset": 13,
+        "endOffset": 26
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Add a private constructor to hide the implicit public one.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "bryan753v@prestigein.com",
+      "tags": [
+        "design"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-08-29T06:30:36+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "06c38b7c-8acf-45f7-adb1-0e00c32132d5",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/filter/CookieContext.java",
+      "project": "Pamnas2-POC",
+      "line": 4,
+      "hash": "ab051e9b1ba7547c1f8be47fda847248",
+      "textRange": {
+        "startLine": 4,
+        "endLine": 4,
+        "startOffset": 49,
+        "endOffset": 61
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static currentToken\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "bryan753v@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-09-18T03:16:48+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "2daaadf6-c948-49d6-b617-1d761e0e452f",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/filter/CookieContext.java",
+      "project": "Pamnas2-POC",
+      "line": 4,
+      "hash": "ab051e9b1ba7547c1f8be47fda847248",
+      "textRange": {
+        "startLine": 4,
+        "endLine": 4,
+        "startOffset": 49,
+        "endOffset": 61
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make currentToken a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "bryan753v@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-09-18T03:16:48+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "399dd4ab-d79f-4abb-b317-e6af91b5f438",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 6,
+      "hash": "61eb5b8abedc8c90eb8c25aaf6239274",
+      "textRange": {
+        "startLine": 6,
+        "endLine": 6,
+        "startOffset": 4,
+        "endOffset": 8
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "fa0ddedc-a320-44b1-90e4-ea869df5fa0a",
+      "rule": "java:S1192",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 6,
+      "hash": "61eb5b8abedc8c90eb8c25aaf6239274",
+      "textRange": {
+        "startLine": 6,
+        "endLine": 6,
+        "startOffset": 42,
+        "endOffset": 51
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 6,
+                "endLine": 6,
+                "startOffset": 42,
+                "endOffset": 51
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 7,
+                "endLine": 7,
+                "startOffset": 45,
+                "endOffset": 54
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 8,
+                "endLine": 8,
+                "startOffset": 41,
+                "endOffset": 50
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 9,
+                "endLine": 9,
+                "startOffset": 42,
+                "endOffset": 51
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 10,
+                "endLine": 10,
+                "startOffset": 40,
+                "endOffset": 49
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 11,
+                "endLine": 11,
+                "startOffset": 44,
+                "endOffset": 53
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 12,
+                "endLine": 12,
+                "startOffset": 43,
+                "endOffset": 52
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 13,
+                "endLine": 13,
+                "startOffset": 40,
+                "endOffset": 49
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 16,
+                "endLine": 16,
+                "startOffset": 40,
+                "endOffset": 49
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 18,
+                "endLine": 18,
+                "startOffset": 40,
+                "endOffset": 49
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 21,
+                "endLine": 21,
+                "startOffset": 45,
+                "endOffset": 54
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 45,
+                "endOffset": 54
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 23,
+                "endLine": 23,
+                "startOffset": 43,
+                "endOffset": 52
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 25,
+                "endLine": 25,
+                "startOffset": 47,
+                "endOffset": 56
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 26,
+                "endLine": 26,
+                "startOffset": 40,
+                "endOffset": 49
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+              "textRange": {
+                "startLine": 27,
+                "endLine": 27,
+                "startOffset": 40,
+                "endOffset": 49
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Define a constant instead of duplicating this literal \"vehicle\" 16 times.",
+      "effort": "34min",
+      "debt": "34min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "design"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-12-25T07:57:42+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "DISTINCT",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "71a8cccf-adb2-4d57-9579-c384dfc14cbd",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 7,
+      "hash": "e4a88eb972ff3a3bffb5bf8300a4c019",
+      "textRange": {
+        "startLine": 7,
+        "endLine": 7,
+        "startOffset": 4,
+        "endOffset": 11
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "372458ea-96cc-4108-8311-8f7769b82aa3",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 8,
+      "hash": "ed54d63e6c0f8779856f3c457489a904",
+      "textRange": {
+        "startLine": 8,
+        "endLine": 8,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "0ef3211c-4571-4a9e-a095-fdbf1b88b6af",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 9,
+      "hash": "a1411a8be6e07e6ca9046472a369a33f",
+      "textRange": {
+        "startLine": 9,
+        "endLine": 9,
+        "startOffset": 4,
+        "endOffset": 10
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "4e04dbca-ad06-4f7e-9735-0ed2c19e9312",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 10,
+      "hash": "24c02c14db0bc1592fc602e3c4f80262",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "cc6aa52e-a0e4-4715-a2f8-49d5658534c2",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 11,
+      "hash": "0decbc251fb4633a90e9e6a1e9599790",
+      "textRange": {
+        "startLine": 11,
+        "endLine": 11,
+        "startOffset": 4,
+        "endOffset": 12
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "c05c1af3-7b92-4bf4-a374-2d479348e073",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 12,
+      "hash": "4c036de8fde40854f858e2b955b268b0",
+      "textRange": {
+        "startLine": 12,
+        "endLine": 12,
+        "startOffset": 4,
+        "endOffset": 12
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "9ff96a13-bf97-472f-b2cd-b8d9a3ec0bfb",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 13,
+      "hash": "5c5a7488d2336040f8554a254b8927c7",
+      "textRange": {
+        "startLine": 13,
+        "endLine": 13,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "73674d83-a524-411e-9ebc-bf73c798dbe2",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 14,
+      "hash": "8e1e195d1c75bcafa2bf5c2be2a5e5b8",
+      "textRange": {
+        "startLine": 14,
+        "endLine": 14,
+        "startOffset": 4,
+        "endOffset": 10
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "9f24c6d7-f6c6-4c85-b6bf-2d55aeef157d",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 15,
+      "hash": "eb976271ec25dd8194a28069e6c7c19d",
+      "textRange": {
+        "startLine": 15,
+        "endLine": 15,
+        "startOffset": 4,
+        "endOffset": 15
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "nguyen267md@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-02-15T07:34:12+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "f0424510-4c5a-4162-8d56-e9812fda2fa7",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 16,
+      "hash": "22451975c22d754a1e006d7e80ab135f",
+      "textRange": {
+        "startLine": 16,
+        "endLine": 16,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "nguyen892xg@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-03-19T07:03:10+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "59342f24-b178-4d9a-b661-9f0fe95f8a06",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 18,
+      "hash": "9d935f7bad5220112d1aa5bf2b94a0a4",
+      "textRange": {
+        "startLine": 18,
+        "endLine": 18,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-07-18T09:08:49+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "7ba42378-5e0d-427c-a2dd-46e956073139",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 21,
+      "hash": "c7bb6a363b5fd3af8b45c7739c8827b0",
+      "textRange": {
+        "startLine": 21,
+        "endLine": 21,
+        "startOffset": 4,
+        "endOffset": 12
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "426458f1-dade-464b-9d59-30960ee2027c",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 22,
+      "hash": "70337682cb3fa2e541e86add6a77b0d4",
+      "textRange": {
+        "startLine": 22,
+        "endLine": 22,
+        "startOffset": 4,
+        "endOffset": 12
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "hoang008t@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-06T08:24:31+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "ec707def-f7cb-42be-8ec2-dbc546d72bc7",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 23,
+      "hash": "bdf7fa1fd66302eb2e2e452e6c62c264",
+      "textRange": {
+        "startLine": 23,
+        "endLine": 23,
+        "startOffset": 4,
+        "endOffset": 10
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "ngu.pham",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-02-27T07:21:24+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "5a7b5b02-d0db-4d0f-8049-d2635d63de06",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 24,
+      "hash": "3a0f758d8a61385df7680b92ead2457f",
+      "textRange": {
+        "startLine": 24,
+        "endLine": 24,
+        "startOffset": 4,
+        "endOffset": 15
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-06-24T02:15:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "5df6b554-01ba-409e-bceb-3b227181f7f5",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 25,
+      "hash": "e94dfcbc67e656ebc95d18e75e4aee6f",
+      "textRange": {
+        "startLine": 25,
+        "endLine": 25,
+        "startOffset": 4,
+        "endOffset": 12
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-07-31T04:01:19+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "3624e8f9-1d34-44e3-a1a7-6929a3a067e1",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 26,
+      "hash": "bb8636c1c7404526535a6ceb47c59956",
+      "textRange": {
+        "startLine": 26,
+        "endLine": 26,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-12-25T07:57:42+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "4850397c-4b6c-47c7-9349-870b9a5417e7",
+      "rule": "java:S115",
+      "severity": "CRITICAL",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "project": "Pamnas2-POC",
+      "line": 27,
+      "hash": "6c68ab5cd2609268b1f0b5abc2f1b19b",
+      "textRange": {
+        "startLine": 27,
+        "endLine": 27,
+        "startOffset": 4,
+        "endOffset": 7
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-12-25T07:57:42+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "94236541-e844-475d-a333-028ba80a89f4",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 48,
+      "hash": "f6d65ce7a3930bc1117cd234b35fa583",
+      "textRange": {
+        "startLine": 48,
+        "endLine": 48,
+        "startOffset": 31,
+        "endOffset": 44
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static RECEIVE_ERROR\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "d1d7dcf0-8747-4f57-b6a0-1c647f5fd45f",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 48,
+      "hash": "f6d65ce7a3930bc1117cd234b35fa583",
+      "textRange": {
+        "startLine": 48,
+        "endLine": 48,
+        "startOffset": 31,
+        "endOffset": 44
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"RECEIVE_ERROR\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "d8f55da3-65ad-4f26-baaf-faef2110d712",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 48,
+      "hash": "f6d65ce7a3930bc1117cd234b35fa583",
+      "textRange": {
+        "startLine": 48,
+        "endLine": 48,
+        "startOffset": 31,
+        "endOffset": 44
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make RECEIVE_ERROR a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "30aa4912-ff55-4b42-8ead-2852f7e884c6",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 49,
+      "hash": "b971dcf88b8c8b10b3730839403cb1ce",
+      "textRange": {
+        "startLine": 49,
+        "endLine": 49,
+        "startOffset": 31,
+        "endOffset": 41
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"SEND_ERROR\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "82744039-992e-4a92-881a-61680a52be9b",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 49,
+      "hash": "b971dcf88b8c8b10b3730839403cb1ce",
+      "textRange": {
+        "startLine": 49,
+        "endLine": 49,
+        "startOffset": 31,
+        "endOffset": 41
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static SEND_ERROR\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "a3efe7b9-ed98-4c58-8419-cfa41de0c69d",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 49,
+      "hash": "b971dcf88b8c8b10b3730839403cb1ce",
+      "textRange": {
+        "startLine": 49,
+        "endLine": 49,
+        "startOffset": 31,
+        "endOffset": 41
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make SEND_ERROR a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "5765000e-a1b4-4530-b4d9-495c1d7bc361",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 53,
+      "hash": "a7991fe7c7933f4ad1e486d97e3e12e0",
+      "textRange": {
+        "startLine": 53,
+        "endLine": 53,
+        "startOffset": 25,
+        "endOffset": 40
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"SEND_SUCCESSFUL\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "8e9bd38f-cd2d-4305-9957-9f45c286f962",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 53,
+      "hash": "a7991fe7c7933f4ad1e486d97e3e12e0",
+      "textRange": {
+        "startLine": 53,
+        "endLine": 53,
+        "startOffset": 25,
+        "endOffset": 40
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make SEND_SUCCESSFUL a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "ce3c1045-c327-4b86-a84f-a72d59d97551",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 53,
+      "hash": "a7991fe7c7933f4ad1e486d97e3e12e0",
+      "textRange": {
+        "startLine": 53,
+        "endLine": 53,
+        "startOffset": 25,
+        "endOffset": 40
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static SEND_SUCCESSFUL\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "46e2447e-f2a5-4523-9f06-03c6122f0da2",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 54,
+      "hash": "cdc61587e2d0281944e9c1232bd8fced",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 54,
+        "startOffset": 25,
+        "endOffset": 42
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"FAX_RESCUE_AGENCY\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "495fa1d6-f27f-40f5-812d-a2e70a669761",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 54,
+      "hash": "cdc61587e2d0281944e9c1232bd8fced",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 54,
+        "startOffset": 25,
+        "endOffset": 42
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make FAX_RESCUE_AGENCY a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "fb93371c-08a4-4e65-857d-71b871ae9c4e",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 54,
+      "hash": "cdc61587e2d0281944e9c1232bd8fced",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 54,
+        "startOffset": 25,
+        "endOffset": 42
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static FAX_RESCUE_AGENCY\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "6613bdb8-7173-4ce4-85b1-7233d1fe884c",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 55,
+      "hash": "ef8ebcc3a49e10f6d53d7f165fdfcb22",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 55,
+        "startOffset": 25,
+        "endOffset": 45
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make RECEIVE_ERROR_STATUS a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "7aae19b5-bf3a-4468-a865-06990246fafc",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 55,
+      "hash": "ef8ebcc3a49e10f6d53d7f165fdfcb22",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 55,
+        "startOffset": 25,
+        "endOffset": 45
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"RECEIVE_ERROR_STATUS\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "c08cfbb0-d556-4bbc-915a-4f6d5942bac2",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 55,
+      "hash": "ef8ebcc3a49e10f6d53d7f165fdfcb22",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 55,
+        "startOffset": 25,
+        "endOffset": 45
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static RECEIVE_ERROR_STATUS\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "620fa388-56ad-44c9-8883-3c3196b3d830",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 56,
+      "hash": "0144c13f38697037d9810f90e98d101b",
+      "textRange": {
+        "startLine": 56,
+        "endLine": 56,
+        "startOffset": 25,
+        "endOffset": 42
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static SEND_ERROR_STATUS\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "6953973f-68a7-463e-9aac-1a5f4c173d94",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 56,
+      "hash": "0144c13f38697037d9810f90e98d101b",
+      "textRange": {
+        "startLine": 56,
+        "endLine": 56,
+        "startOffset": 25,
+        "endOffset": 42
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make SEND_ERROR_STATUS a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "f62cc55c-d892-4594-9d45-2de38a588f66",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 56,
+      "hash": "0144c13f38697037d9810f90e98d101b",
+      "textRange": {
+        "startLine": 56,
+        "endLine": 56,
+        "startOffset": 25,
+        "endOffset": 42
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"SEND_ERROR_STATUS\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "3b29bc40-5e23-446b-a40d-2b678849b737",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 57,
+      "hash": "d436449361a2644483cd8f0cec03d69e",
+      "textRange": {
+        "startLine": 57,
+        "endLine": 57,
+        "startOffset": 25,
+        "endOffset": 37
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static USER_KEY_FAX\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "4cf52268-9667-4151-9daf-833701c5f7b8",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 57,
+      "hash": "d436449361a2644483cd8f0cec03d69e",
+      "textRange": {
+        "startLine": 57,
+        "endLine": 57,
+        "startOffset": 25,
+        "endOffset": 37
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make USER_KEY_FAX a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "8dd02096-00de-4e74-8903-699aef457e28",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 57,
+      "hash": "d436449361a2644483cd8f0cec03d69e",
+      "textRange": {
+        "startLine": 57,
+        "endLine": 57,
+        "startOffset": 25,
+        "endOffset": 37
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"USER_KEY_FAX\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "52baccb6-9618-4692-b21f-ad845eb34747",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 58,
+      "hash": "634f51157f73c6e7c13de6261a0bfd39",
+      "textRange": {
+        "startLine": 58,
+        "endLine": 58,
+        "startOffset": 25,
+        "endOffset": 29
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make PLUS a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "7a2c17e2-907f-4713-9a99-626df0e3df0c",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 58,
+      "hash": "634f51157f73c6e7c13de6261a0bfd39",
+      "textRange": {
+        "startLine": 58,
+        "endLine": 58,
+        "startOffset": 25,
+        "endOffset": 29
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"PLUS\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "cba152d8-1255-41a8-b4f2-1ff2be21778d",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 58,
+      "hash": "634f51157f73c6e7c13de6261a0bfd39",
+      "textRange": {
+        "startLine": 58,
+        "endLine": 58,
+        "startOffset": 25,
+        "endOffset": 29
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static PLUS\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "0e2b7a0f-4273-49ed-950b-f7fabba63414",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 59,
+      "hash": "d3ddd64e6b70cf3626543dfb45552927",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 25,
+        "endOffset": 30
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make MINUS a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "6f3e601b-9cd3-4c05-8f67-294df3371c59",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 59,
+      "hash": "d3ddd64e6b70cf3626543dfb45552927",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 25,
+        "endOffset": 30
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static MINUS\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "85eed85d-75fe-4c47-b4a4-19d38eb516e7",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 59,
+      "hash": "d3ddd64e6b70cf3626543dfb45552927",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 25,
+        "endOffset": 30
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"MINUS\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "van017nhuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2025-03-10T08:58:32+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "46169b9e-43cb-46f2-8471-f721d7f958a0",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 98,
+      "hash": "edabf5d936cd1e8de13b4da447bf2d3f",
+      "textRange": {
+        "startLine": 98,
+        "endLine": 98,
+        "startOffset": 37,
+        "endOffset": 61
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "d6d50e80-92f0-4174-9829-fe65c76be66f",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 101,
+      "hash": "b5da6f327708ac0811eba79fe407b8fa",
+      "textRange": {
+        "startLine": 101,
+        "endLine": 101,
+        "startOffset": 37,
+        "endOffset": 61
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "eba115f2-4a98-4434-a7d2-89d95ffd689a",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 103,
+      "hash": "89c29d949c2452ab3b690157d980eac9",
+      "textRange": {
+        "startLine": 103,
+        "endLine": 103,
+        "startOffset": 37,
+        "endOffset": 69
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "dq404tuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-04-26T07:47:16+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "57abe366-377d-43ec-83b9-f9dc78fd22a0",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 105,
+      "hash": "ddd4da7be4ffe3f361ae7ac61cc64cc7",
+      "textRange": {
+        "startLine": 105,
+        "endLine": 105,
+        "startOffset": 37,
+        "endOffset": 66
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "9c249859-f44c-4fa3-809d-cd69717b3128",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 107,
+      "hash": "2c897e75fb810d3103880b712a6bc016",
+      "textRange": {
+        "startLine": 107,
+        "endLine": 107,
+        "startOffset": 37,
+        "endOffset": 63
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "a88e3e7d-ebaa-464c-b7c4-b3683b75cdfd",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 109,
+      "hash": "a95570544b17dbdcd1c38ffbc4abfb51",
+      "textRange": {
+        "startLine": 109,
+        "endLine": 109,
+        "startOffset": 37,
+        "endOffset": 69
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "bc64a869-cd71-4233-b269-8ae66336be25",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 111,
+      "hash": "57d1447e7462697caaa4608cec6573a5",
+      "textRange": {
+        "startLine": 111,
+        "endLine": 111,
+        "startOffset": 37,
+        "endOffset": 70
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "80ae85b8-8bd2-4b19-9ab7-ae5c3ab61643",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 113,
+      "hash": "ed45b192f39406c4ac37feca06644c34",
+      "textRange": {
+        "startLine": 113,
+        "endLine": 113,
+        "startOffset": 37,
+        "endOffset": 64
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "ln753duong@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-12-04T04:02:20+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "b79eabe6-aca8-4685-911a-64ad8b3a1c6d",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 115,
+      "hash": "084419b7814948c6eb154ec40232eeb3",
+      "textRange": {
+        "startLine": 115,
+        "endLine": 115,
+        "startOffset": 37,
+        "endOffset": 66
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "nanh@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-01-19T04:16:13+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "f51589f4-7973-4f35-b21c-d1879d50904a",
+      "rule": "java:S2386",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 117,
+      "hash": "9221978ff6cc9c860f2b9160b363535f",
+      "textRange": {
+        "startLine": 117,
+        "endLine": 117,
+        "startOffset": 37,
+        "endOffset": 63
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this member \"protected\".",
+      "effort": "15min",
+      "debt": "15min",
+      "author": "nguyen892xg@prestigein.com",
+      "tags": [
+        "cwe",
+        "unpredictable",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-05-06T06:34:19+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CONVENTIONAL",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "98f622e7-48d2-4512-9898-076fb33cf1d7",
+      "rule": "java:S1124",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 176,
+      "hash": "528db717aa5281ca5c6a64e92431536d",
+      "textRange": {
+        "startLine": 176,
+        "endLine": 176,
+        "startOffset": 17,
+        "endOffset": 23
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Reorder the modifiers to comply with the Java Language Specification.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "nguyen441vt@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-04-11T07:48:23+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": true,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "28fed199-aa09-4b42-bc19-defc09b770b1",
+      "rule": "java:S1124",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 178,
+      "hash": "5d54f5bf1a46c24e705f624197c4828a",
+      "textRange": {
+        "startLine": 178,
+        "endLine": 178,
+        "startOffset": 17,
+        "endOffset": 23
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Reorder the modifiers to comply with the Java Language Specification.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "nguyen441vt@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2024-04-11T07:48:23+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": true,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "575319cd-7b07-45f9-a9f0-d4af5f599f93",
+      "rule": "java:S1700",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "project": "Pamnas2-POC",
+      "line": 290,
+      "hash": "cb127eb0bd46d203eb1f882e16e9b7f6",
+      "textRange": {
+        "startLine": 290,
+        "endLine": 290,
+        "startOffset": 28,
+        "endOffset": 39
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename field \"serviceType\"",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "brain-overload"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-04-21T03:36:34+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "2dcf9700-280e-4df5-8367-08e01af953bb",
+      "rule": "java:S1118",
+      "severity": "MAJOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 6,
+      "hash": "f10b7c4a6770289d5d34ccd598f1f0f5",
+      "textRange": {
+        "startLine": 6,
+        "endLine": 6,
+        "startOffset": 13,
+        "endOffset": 27
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Add a private constructor to hide the implicit public one.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "design"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "CLEAR",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "MEDIUM"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "1358e2c5-311c-4340-9f6d-317ad63f3887",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 7,
+      "hash": "6de66fd463c6042a201c24ae69ee02f7",
+      "textRange": {
+        "startLine": 7,
+        "endLine": 7,
+        "startOffset": 25,
+        "endOffset": 34
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"DASHBOARD\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "5b3ba149-ad40-43aa-824f-519b19edbe51",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 7,
+      "hash": "6de66fd463c6042a201c24ae69ee02f7",
+      "textRange": {
+        "startLine": 7,
+        "endLine": 7,
+        "startOffset": 25,
+        "endOffset": 34
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static DASHBOARD\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "b2fae73b-d852-4ac6-a801-04f787fb7499",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 7,
+      "hash": "6de66fd463c6042a201c24ae69ee02f7",
+      "textRange": {
+        "startLine": 7,
+        "endLine": 7,
+        "startOffset": 25,
+        "endOffset": 34
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make DASHBOARD a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "57ca9c47-a469-4344-8b35-ad0c42fc17dc",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 8,
+      "hash": "36b0574a94dadfa7d3726e4abb1a29eb",
+      "textRange": {
+        "startLine": 8,
+        "endLine": 8,
+        "startOffset": 25,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"BYD\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "94042616-b71a-4785-8c9f-15197e280659",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 8,
+      "hash": "36b0574a94dadfa7d3726e4abb1a29eb",
+      "textRange": {
+        "startLine": 8,
+        "endLine": 8,
+        "startOffset": 25,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static BYD\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "d44566c9-307e-4ac0-9614-f498b2aecc5c",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 8,
+      "hash": "36b0574a94dadfa7d3726e4abb1a29eb",
+      "textRange": {
+        "startLine": 8,
+        "endLine": 8,
+        "startOffset": 25,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make BYD a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "471e743c-3fd1-44cc-9113-b6f2083430d1",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 9,
+      "hash": "85425b57d4fbba8eff1606d244aefe00",
+      "textRange": {
+        "startLine": 9,
+        "endLine": 9,
+        "startOffset": 25,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make BMW a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "dq404tuan@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-06-01T04:14:07+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "66dce8b4-9352-47ab-9163-780be7c662b0",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 9,
+      "hash": "85425b57d4fbba8eff1606d244aefe00",
+      "textRange": {
+        "startLine": 9,
+        "endLine": 9,
+        "startOffset": 25,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static BMW\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "dq404tuan@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-06-01T04:14:07+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "8b41bedc-2243-4846-b2d8-ae76fedc2bd7",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 9,
+      "hash": "85425b57d4fbba8eff1606d244aefe00",
+      "textRange": {
+        "startLine": 9,
+        "endLine": 9,
+        "startOffset": 25,
+        "endOffset": 28
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"BMW\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "dq404tuan@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-06-01T04:14:07+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "149b6e15-0b0d-4319-a99b-9d4a66ad79d7",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 10,
+      "hash": "b86c9116524dfe6416f2ccb0b8a91f78",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 25,
+        "endOffset": 31
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"MASTER\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "7da922f9-64fa-4de7-8c13-744c6e9f3822",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 10,
+      "hash": "b86c9116524dfe6416f2ccb0b8a91f78",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 25,
+        "endOffset": 31
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static MASTER\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "fc2fed53-b4b9-4973-9a5a-0008a9c97ca2",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 10,
+      "hash": "b86c9116524dfe6416f2ccb0b8a91f78",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 25,
+        "endOffset": 31
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make MASTER a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "7f27e3f9-8796-4116-a893-c19ed50abbc5",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 11,
+      "hash": "64cb33fe2a1009ee0b7c1fa633fa4abe",
+      "textRange": {
+        "startLine": 11,
+        "endLine": 11,
+        "startOffset": 25,
+        "endOffset": 29
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static TOOL\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "a7e60534-6b3a-4a6a-adac-9f72a04f1477",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 11,
+      "hash": "64cb33fe2a1009ee0b7c1fa633fa4abe",
+      "textRange": {
+        "startLine": 11,
+        "endLine": 11,
+        "startOffset": 25,
+        "endOffset": 29
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make TOOL a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "d2565918-75fa-448e-827e-3e6f3aa28086",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 11,
+      "hash": "64cb33fe2a1009ee0b7c1fa633fa4abe",
+      "textRange": {
+        "startLine": 11,
+        "endLine": 11,
+        "startOffset": 25,
+        "endOffset": 29
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"TOOL\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "242ac7e7-ffb4-4949-990f-a345b2659ad1",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 12,
+      "hash": "5976e1b28deda177c0cd228041877d88",
+      "textRange": {
+        "startLine": 12,
+        "endLine": 12,
+        "startOffset": 25,
+        "endOffset": 33
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make LOG_LIST a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "6c866ab8-071f-4ff7-9c21-f0f4390e09d1",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 12,
+      "hash": "5976e1b28deda177c0cd228041877d88",
+      "textRange": {
+        "startLine": 12,
+        "endLine": 12,
+        "startOffset": 25,
+        "endOffset": 33
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"LOG_LIST\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "e54b22c0-f238-4e8c-8e2e-ae281e89b276",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 12,
+      "hash": "5976e1b28deda177c0cd228041877d88",
+      "textRange": {
+        "startLine": 12,
+        "endLine": 12,
+        "startOffset": 25,
+        "endOffset": 33
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static LOG_LIST\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "88489ced-b1be-4cc9-95bc-eb392c0b6095",
+      "rule": "java:S1444",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 13,
+      "hash": "5f2dbc83542d46fc78091d46dc57971b",
+      "textRange": {
+        "startLine": 13,
+        "endLine": 13,
+        "startOffset": 25,
+        "endOffset": 36
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make this \"public static NEW_RECEIVE\" field final",
+      "effort": "20min",
+      "debt": "20min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe",
+        "cert"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "a66233e2-5daf-4767-964c-347923ca2847",
+      "rule": "java:S1104",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 13,
+      "hash": "5f2dbc83542d46fc78091d46dc57971b",
+      "textRange": {
+        "startLine": 13,
+        "endLine": 13,
+        "startOffset": 25,
+        "endOffset": 36
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make NEW_RECEIVE a static final constant or non-public and provide accessors if needed.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "cwe"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "MODULAR",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "b248dccc-79d3-417c-a8a2-9fb4d295b1cd",
+      "rule": "java:S3008",
+      "severity": "MINOR",
+      "component": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "project": "Pamnas2-POC",
+      "line": 13,
+      "hash": "5f2dbc83542d46fc78091d46dc57971b",
+      "textRange": {
+        "startLine": 13,
+        "endLine": 13,
+        "startOffset": 25,
+        "endOffset": 36
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Rename this field \"NEW_RECEIVE\" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",
+      "effort": "2min",
+      "debt": "2min",
+      "author": "vie002l@prestigein.com",
+      "tags": [
+        "convention"
+      ],
+      "transitions": [
+        "accept",
+        "falsepositive",
+        "confirm",
+        "resolve",
+        "wontfix"
+      ],
+      "actions": [
+        "set_type",
+        "set_tags",
+        "comment",
+        "set_severity",
+        "assign"
+      ],
+      "comments": [],
+      "creationDate": "2023-05-25T02:29:22+0000",
+      "updateDate": "2026-01-08T10:58:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "IDENTIFIABLE",
+      "cleanCodeAttributeCategory": "CONSISTENT",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "LOW"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "InitSystemUserDefault.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/config/InitSystemUserDefault.java"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "Constant.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/constant/Constant.java"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "BaseSearchFaxComparator.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchFaxComparator.java"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "BaseSearchComparator.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/comparator/BaseSearchComparator.java"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/filter/CookieContext.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "CookieContext.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/config/filter/CookieContext.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/config/filter/CookieContext.java"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/config/ListenerConfig.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "ListenerConfig.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/config/ListenerConfig.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/config/ListenerConfig.java"
+    },
+    {
+      "key": "Pamnas2-POC",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "Pamnas2-POC",
+      "longName": "Pamnas2-POC"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "ModuleConstant.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/constant/ModuleConstant.java"
+    },
+    {
+      "key": "Pamnas2-POC:src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "ClientName.java",
+      "longName": "src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java",
+      "path": "src/main/java/com/pieis/pamnas2/wiki/constant/ClientName.java"
+    }
+  ],
+  "rules": [
+    {
+      "key": "java:S115",
+      "name": "Constant names should comply with a naming convention",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S3776",
+      "name": "Cognitive Complexity of methods should not be too high",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1602",
+      "name": "Lambdas containing only one statement should not nest this statement in a block",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1611",
+      "name": "Parentheses should be removed from a single lambda parameter when its type is inferred",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1118",
+      "name": "Utility classes should not have public constructors",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1124",
+      "name": "Modifiers should be declared in the correct order",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S125",
+      "name": "Sections of code should not be commented out",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1192",
+      "name": "String literals should not be duplicated",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1444",
+      "name": "\"public static\" fields should be constant",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S3008",
+      "name": "Static non-final field names should comply with a naming convention",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1700",
+      "name": "A field should not duplicate the name of its containing class",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S3358",
+      "name": "Ternary operators should not be nested",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1104",
+      "name": "Class variable fields should not have public accessibility",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S2386",
+      "name": "Mutable fields should not be \"public static\"",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    },
+    {
+      "key": "java:S1659",
+      "name": "Multiple variables should not be declared on the same line",
+      "lang": "java",
+      "status": "READY",
+      "langName": "Java"
+    }
+  ],
+  "users": [
+    {
+      "login": "admin",
+      "name": "Administrator",
+      "active": true
+    }
+  ],
+  "languages": [
+    {
+      "key": "py",
+      "name": "Python"
+    },
+    {
+      "key": "ipynb",
+      "name": "IPython Notebooks"
+    },
+    {
+      "key": "kotlin",
+      "name": "Kotlin"
+    },
+    {
+      "key": "go",
+      "name": "Go"
+    },
+    {
+      "key": "terraform",
+      "name": "Terraform"
+    },
+    {
+      "key": "cloudformation",
+      "name": "CloudFormation"
+    },
+    {
+      "key": "kubernetes",
+      "name": "Kubernetes"
+    },
+    {
+      "key": "docker",
+      "name": "Docker"
+    },
+    {
+      "key": "azureresourcemanager",
+      "name": "Azure Resource Manager"
+    },
+    {
+      "key": "yaml",
+      "name": "YAML"
+    },
+    {
+      "key": "json",
+      "name": "JSON"
+    },
+    {
+      "key": "js",
+      "name": "JavaScript"
+    },
+    {
+      "key": "ts",
+      "name": "TypeScript"
+    },
+    {
+      "key": "css",
+      "name": "CSS"
+    },
+    {
+      "key": "ruby",
+      "name": "Ruby"
+    },
+    {
+      "key": "scala",
+      "name": "Scala"
+    },
+    {
+      "key": "rust",
+      "name": "Rust"
+    },
+    {
+      "key": "cs",
+      "name": "C#"
+    },
+    {
+      "key": "java",
+      "name": "Java"
+    },
+    {
+      "key": "web",
+      "name": "HTML"
+    },
+    {
+      "key": "jsp",
+      "name": "JSP"
+    },
+    {
+      "key": "flex",
+      "name": "Flex"
+    },
+    {
+      "key": "xml",
+      "name": "XML"
+    },
+    {
+      "key": "php",
+      "name": "PHP"
+    },
+    {
+      "key": "text",
+      "name": "Text"
+    },
+    {
+      "key": "secrets",
+      "name": "Secrets"
+    },
+    {
+      "key": "vbnet",
+      "name": "VB.NET"
+    }
+  ],
+  "facets": [
+    {
+      "property": "severities",
+      "values": [
+        {
+          "val": "MINOR",
+          "count": 262
+        },
+        {
+          "val": "CRITICAL",
+          "count": 70
+        },
+        {
+          "val": "MAJOR",
+          "count": 61
+        },
+        {
+          "val": "BLOCKER",
+          "count": 5
+        },
+        {
+          "val": "INFO",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "property": "types",
+      "values": [
+        {
+          "val": "CODE_SMELL",
+          "count": 391
+        },
+        {
+          "val": "BUG",
+          "count": 11
+        },
+        {
+          "val": "VULNERABILITY",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "property": "codeVariants",
+      "values": []
+    },
+    {
+      "property": "impactSoftwareQualities",
+      "values": [
+        {
+          "val": "MAINTAINABILITY",
+          "count": 391
+        },
+        {
+          "val": "RELIABILITY",
+          "count": 11
+        },
+        {
+          "val": "SECURITY",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "property": "impactSeverities",
+      "values": [
+        {
+          "val": "BLOCKER",
+          "count": 5
+        },
+        {
+          "val": "HIGH",
+          "count": 70
+        },
+        {
+          "val": "INFO",
+          "count": 4
+        },
+        {
+          "val": "LOW",
+          "count": 262
+        },
+        {
+          "val": "MEDIUM",
+          "count": 61
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SonarQube Report Export</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --danger: #dc2626;
+            --border: #e5e7eb;
+            --bg: #f9fafb;
+            --text: #111827;
+            --muted: #6b7280;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 40px;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 28px 32px;
+            box-shadow: 0 10px 25px rgba(0,0,0,.05);
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .field { margin-bottom: 18px; }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 400;
+            margin-left: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .error {
+            font-size: 12px;
+            color: var(--danger);
+            margin-top: 6px;
+        }
+
+        .actions {
+            margin-top: 6px;
+        }
+
+        button {
+            padding: 10px 14px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .list {
+            margin-top: 10px;
+        }
+
+        .item {
+            display: inline-flex;
+            align-items: center;
+            background: #f3f4f6;
+            border-radius: 999px;
+            padding: 6px 10px;
+            margin: 6px 6px 0 0;
+            font-size: 13px;
+        }
+
+        .remove {
+            margin-left: 8px;
+            color: var(--danger);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .footer {
+            margin-top: 28px;
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>SonarQube Report Export</h1>
+
+        <!-- Cookie -->
+        <div class="field">
+            <label>Cookie <span class="hint">(mandatory)</span></label>
+            <input id="cookie" placeholder="Sonar token" oninput="clearError('cookieError')" />
+            <div id="cookieError" class="error"></div>
+        </div>
+
+        <!-- Page settings -->
+        <div class="row">
+            <div class="field">
+                <label>Page Size <span class="hint">(optional)</span></label>
+                <input id="pageSize"
+                       type="number"
+                       placeholder="100"
+                       oninput="validatePageSize()" />
+                <div id="pageSizeError" class="error"></div>
+            </div>
+
+            <div class="field">
+                <label>Page Number <span class="hint">(optional)</span></label>
+                <input id="pageNumber"
+                       type="number"
+                       placeholder="1"
+                       oninput="validatePageNumber()" />
+                <div id="pageNumberError" class="error"></div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Row Start Index <span class="hint">(optional)</span></label>
+            <input id="rowStartIndex" type="number" />
+        </div>
+
+        <!-- Repositories -->
+        <div class="field">
+            <label>Repositories <span class="hint">(mandatory)</span></label>
+            <input id="repoInput"
+                   placeholder="repo 1, repo 2, repo 3"
+                   oninput="clearError('repoError')" />
+            <div class="actions">
+                <button class="btn-secondary" onclick="addRepos()">Add</button>
+            </div>
+            <div id="repoList" class="list"></div>
+            <div id="repoError" class="error"></div>
+        </div>
+
+        <!-- Statuses -->
+        <div class="field">
+            <label>Statuses <span class="hint">(optional)</span></label>
+            <input id="statusInput"
+                   placeholder="CONFIRMED,OPEN"
+                   oninput="this.value = this.value.toUpperCase()" />
+            <div class="actions">
+                <button class="btn-secondary" onclick="addStatuses()">Add</button>
+            </div>
+            <div id="statusList" class="list"></div>
+        </div>
+
+        <div class="footer">
+            <button class="btn-primary" onclick="exportReport()">Export Excel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const repositories = new Set();
+    const statuses = new Set(["CONFIRMED", "OPEN"]);
+
+    renderStatuses();
+
+    function setError(id, msg) {
+        document.getElementById(id).innerText = msg;
+    }
+
+    function clearError(id) {
+        document.getElementById(id).innerText = '';
+    }
+
+    /* -------- Validation -------- */
+
+    function validatePageSize() {
+        const v = document.getElementById('pageSize').value;
+        if (!v) { clearError('pageSizeError'); return true; }
+
+        const n = Number(v);
+        if (n < 1) {
+            setError('pageSizeError', 'Page size cannot be lower than 1');
+            return false;
+        }
+        if (n > 499) {
+            setError('pageSizeError', 'Page size cannot be greater than 499');
+            return false;
+        }
+        clearError('pageSizeError');
+        return true;
+    }
+
+    function validatePageNumber() {
+        const v = document.getElementById('pageNumber').value;
+        if (!v) { clearError('pageNumberError'); return true; }
+
+        if (Number(v) < 1) {
+            setError('pageNumberError', 'Page number cannot be lower than 1');
+            return false;
+        }
+        clearError('pageNumberError');
+        return true;
+    }
+
+    /* -------- Repositories -------- */
+
+    function addRepos() {
+        const input = document.getElementById('repoInput');
+        input.value.split(',')
+            .map(v => v.trim())
+            .filter(Boolean)
+            .forEach(v => repositories.add(v));
+
+        input.value = '';
+        renderRepos();
+        clearError('repoError');
+    }
+
+    function removeRepo(v) {
+        repositories.delete(v);
+        renderRepos();
+    }
+
+    function renderRepos() {
+        const el = document.getElementById('repoList');
+        el.innerHTML = '';
+        repositories.forEach(r => {
+            el.innerHTML += `
+                <div class="item">${r}
+                    <span class="remove" onclick="removeRepo('${r}')">✕</span>
+                </div>`;
+        });
+    }
+
+    /* -------- Statuses -------- */
+
+    function addStatuses() {
+        const input = document.getElementById('statusInput');
+        input.value.split(',')
+            .map(v => v.trim().toUpperCase())
+            .filter(Boolean)
+            .forEach(v => statuses.add(v));
+
+        input.value = '';
+        renderStatuses();
+    }
+
+    function removeStatus(v) {
+        statuses.delete(v);
+        renderStatuses();
+    }
+
+    function renderStatuses() {
+        const el = document.getElementById('statusList');
+        el.innerHTML = '';
+        statuses.forEach(s => {
+            el.innerHTML += `
+                <div class="item">${s}
+                    <span class="remove" onclick="removeStatus('${s}')">✕</span>
+                </div>`;
+        });
+    }
+
+    /* -------- Export -------- */
+
+    async function exportReport() {
+        let valid = true;
+
+        if (!document.getElementById('cookie').value.trim()) {
+            setError('cookieError', 'Cookie cannot be empty');
+            valid = false;
+        }
+
+        if (repositories.size === 0) {
+            setError('repoError', 'Repositories cannot be empty');
+            valid = false;
+        }
+
+        if (!validatePageSize() || !validatePageNumber()) {
+            valid = false;
+        }
+
+        if (!valid) return;
+
+        const request = {
+            cookie: document.getElementById('cookie').value.trim(),
+            pageSize: document.getElementById('pageSize').value
+                ? Number(document.getElementById('pageSize').value)
+                : 100,
+            pageNumber: document.getElementById('pageNumber').value
+                ? Number(document.getElementById('pageNumber').value)
+                : 1,
+            repositories: Array.from(repositories),
+            statuses: Array.from(statuses),
+            rowStartIndex: document.getElementById('rowStartIndex').value
+                ? Number(document.getElementById('rowStartIndex').value)
+                : null
+        };
+
+        try {
+            const res = await fetch('http://localhost:8080/api/v1/tools/sonar/export', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(request)
+            });
+
+            if (!res.ok) throw new Error();
+
+            const blob = await res.blob();
+
+            /* ---- filename from API ---- */
+            let filename = 'sonar_report.xlsx'; // fallback
+            const disposition = res.headers.get('Content-Disposition');
+            if (disposition) {
+                const match = disposition.match(/filename\*?=(?:UTF-8'')?["']?([^;"']+)/i);
+                if (match && match[1]) {
+                    filename = decodeURIComponent(match[1]);
+                }
+            }
+
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(a.href);
+
+        } catch {
+            alert('Failed to export report');
+        }
+    }
+</script>
+
+</body>
+</html>
