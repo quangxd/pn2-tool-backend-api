@@ -8,7 +8,6 @@ import com.tool.sonarq.dto.request.ReportRequest;
 import com.tool.sonarq.dto.response.BranchResponse;
 import com.tool.sonarq.dto.response.IssueExportData;
 import com.tool.sonarq.dto.response.SonarResponse;
-import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.util.FileReader;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +28,8 @@ import static java.lang.String.format;
 import static java.util.Optional.of;
 import static java.util.Optional.ofNullable;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
-import static reactor.core.publisher.Mono.*;
+import static reactor.core.publisher.Mono.error;
+import static reactor.core.publisher.Mono.zip;
 
 
 @Slf4j
@@ -58,10 +58,9 @@ public class SonarClient {
                 .exchangeToMono(response -> toSonarResponseMono(response, repository))
                 .doOnNext(response -> log.info("Sonar response data retrieved for repository: {}", repository))
                 .map(this::toIssues)
-                .onErrorResume(
+                .doOnError(
                         e -> {
                             log.error("Failed to fetch response for {}: {}", repository, e.getMessage());
-                            return error(new BizException(e.getMessage()));
                         }
                 );
     }
@@ -72,10 +71,9 @@ public class SonarClient {
                 .header(HttpHeaders.COOKIE, cookie)
                 .exchangeToMono(this::toBranchResponseMono)
                 .doOnNext(response -> log.info("Branch data retrieved for {}", repository))
-                .onErrorResume(
+                .doOnError(
                         e -> {
                             log.error("Failed to fetch branch for {}: {}", repository, e.getMessage());
-                            return just(new BranchResponse());
                         }
                 );
     }
