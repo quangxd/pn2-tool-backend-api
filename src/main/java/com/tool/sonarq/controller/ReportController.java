@@ -1,17 +1,23 @@
 package com.tool.sonarq.controller;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Map;
-
-
 import com.tool.sonarq.dto.request.ReportRequest;
 import com.tool.sonarq.service.impl.ReportServiceImpl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+import java.time.Instant;
+import java.util.Map;
+
+import static java.lang.String.format;
+import static java.time.LocalDateTime.now;
+import static java.time.format.DateTimeFormatter.ofPattern;
 
 @RestController
 @RequestMapping("/api/v1/tools")
@@ -22,7 +28,7 @@ public class ReportController {
         this.reportService = reportService;
     }
 
-    @GetMapping("/health")
+    @GetMapping("/sonar/health")
     public ResponseEntity<Map<String, Object>> liveness() {
         return ResponseEntity.ok(
                 Map.of(
@@ -33,15 +39,13 @@ public class ReportController {
     }
 
     @PostMapping("/sonar/export")
-    public ResponseEntity<byte[]> generateReport(
-            @RequestBody ReportRequest request) throws Exception {
+    public Mono<ResponseEntity<byte[]>> generateReport1(@RequestBody ReportRequest request) {
+        return reportService.generate(request)
+                .map(this::toReportResponse);
+    }
 
-        byte[] file = reportService.generate(request);
-
-        String filename = "sonarq_report_" +
-                LocalDateTime.now().format(
-                        DateTimeFormatter.ofPattern("dd_MM_yyyy_HH_mm_ss"))
-                + ".xlsx";
+    private ResponseEntity<byte[]> toReportResponse(byte[] file) {
+        String filename = format("sonarq_report_%s.xlsx", now().format(ofPattern("dd_MM_yyyy_HH_mm_ss")));
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION,

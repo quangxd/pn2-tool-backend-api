@@ -1,7 +1,8 @@
 package com.tool.sonarq.service;
 
 import com.tool.sonarq.dto.request.ReportRequest;
+import reactor.core.publisher.Mono;
 
 public interface ReportService {
-    byte[] generate(ReportRequest reportRequest) throws Exception;
+    Mono<byte[]> generate(ReportRequest reportRequest) throws Exception;
 }

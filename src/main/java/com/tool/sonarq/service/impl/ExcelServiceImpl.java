@@ -3,6 +3,7 @@ package com.tool.sonarq.service.impl;
 import com.tool.sonarq.dto.Impact;
 import com.tool.sonarq.dto.Issue;
 import com.tool.sonarq.dto.response.IssueExportData;
+import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
@@ -10,11 +11,12 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -24,9 +26,12 @@ import java.util.Map;
 
 import static java.lang.String.format;
 import static java.lang.String.join;
+import static java.time.LocalDateTime.now;
+import static java.time.OffsetDateTime.parse;
 import static java.util.Optional.of;
 import static java.util.Optional.ofNullable;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static reactor.core.publisher.Mono.fromCallable;
 
 @Slf4j
 @Service
@@ -35,8 +40,15 @@ public class ExcelServiceImpl implements ExcelService {
     private static final DateTimeFormatter SONAR_INPUT_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ");
     private static final DateTimeFormatter OUTPUT_FORMAT = DateTimeFormatter.ofPattern("d/M/yyyy  H:mm:ss");
 
-    @Override
-    public byte[] generateReport(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException {
+    public Mono<byte[]> generateReport(Map<String, IssueExportData> dataMap, Integer rowStartIndex) {
+        return fromCallable(() -> createExcelSheet(dataMap, rowStartIndex))
+                .subscribeOn(Schedulers.boundedElastic())
+                .onErrorMap(IOException.class,
+                        ex -> new BizException(ex.getMessage())
+                );
+    }
+
+    private byte[] createExcelSheet(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException {
         ofNullable(dataMap)
                 .filter(this::isEmptyVulnerability)
                 .map(Map::keySet)
@@ -70,7 +82,7 @@ public class ExcelServiceImpl implements ExcelService {
                         ofNullable(entry.getValue())
                                 .map(IssueExportData::getBranch)
                                 .orElse(EMPTY),
-                        LocalDateTime.now().format(OUTPUT_FORMAT));
+                        now().format(OUTPUT_FORMAT));
                 fillData(sheet,
                         ofNullable(entry.getValue())
                                 .map(IssueExportData::getIssues)
@@ -186,7 +198,7 @@ public class ExcelServiceImpl implements ExcelService {
 
     private String toDateFormat(String sonarDate) {
         OffsetDateTime odt =
-                OffsetDateTime.parse(sonarDate, SONAR_INPUT_FORMAT);
+                parse(sonarDate, SONAR_INPUT_FORMAT);
 
         ZonedDateTime vnTime =
                 odt.atZoneSameInstant(ZoneId.of("Asia/Ho_Chi_Minh"));
