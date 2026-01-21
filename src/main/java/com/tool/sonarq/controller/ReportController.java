@@ -2,6 +2,7 @@ package com.tool.sonarq.controller;
 
 import com.tool.sonarq.dto.request.ReportRequest;
 import com.tool.sonarq.service.impl.ReportServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,10 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 
 @RestController
 @RequestMapping("/api/v1/tools")
+@RequiredArgsConstructor
 public class ReportController {
 
     private final ReportServiceImpl reportService;
-    public ReportController(ReportServiceImpl reportService) {
-        this.reportService = reportService;
-    }
 
     @GetMapping("/sonar/health")
     public ResponseEntity<Map<String, Object>> liveness() {

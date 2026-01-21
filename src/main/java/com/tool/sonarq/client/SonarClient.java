@@ -59,9 +59,7 @@ public class SonarClient {
                 .doOnNext(response -> log.info("Sonar response data retrieved for repository: {}", repository))
                 .map(this::toIssues)
                 .doOnError(
-                        e -> {
-                            log.error("Failed to fetch response for {}: {}", repository, e.getMessage());
-                        }
+                        e -> log.error("Failed to fetch response for {}: {}", repository, e.getMessage())
                 );
     }
 
@@ -72,9 +70,7 @@ public class SonarClient {
                 .exchangeToMono(this::toBranchResponseMono)
                 .doOnNext(response -> log.info("Branch data retrieved for {}", repository))
                 .doOnError(
-                        e -> {
-                            log.error("Failed to fetch branch for {}: {}", repository, e.getMessage());
-                        }
+                        e -> log.error("Failed to fetch branch for {}: {}", repository, e.getMessage())
                 );
     }
 
