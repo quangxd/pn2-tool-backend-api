@@ -1,4 +1,4 @@
-package com.tool.sonarq.dto.request;
+package com.tool.sonarq.dto.model.request;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.tool.sonarq.dto;
+package com.tool.sonarq.dto.model;
 
 import lombok.Data;
 

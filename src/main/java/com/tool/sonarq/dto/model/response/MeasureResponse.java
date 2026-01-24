@@ -1,7 +1,7 @@
-package com.tool.sonarq.dto.response;
+package com.tool.sonarq.dto.model.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.tool.sonarq.dto.ComponentMeasures;
+import com.tool.sonarq.dto.model.ComponentMeasures;
 import lombok.Data;
 
 @Data

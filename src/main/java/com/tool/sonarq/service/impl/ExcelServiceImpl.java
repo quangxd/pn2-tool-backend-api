@@ -1,8 +1,8 @@
 package com.tool.sonarq.service.impl;
 
-import com.tool.sonarq.dto.Impact;
 import com.tool.sonarq.dto.IssueDto;
 import com.tool.sonarq.dto.IssueExportData;
+import com.tool.sonarq.dto.model.Impact;
 import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
@@ -199,12 +199,9 @@ public class ExcelServiceImpl implements ExcelService {
         }
     }
 
-    private String toDateFormat(String sonarDate) {
-        OffsetDateTime odt =
-                parse(sonarDate, SONAR_INPUT_FORMAT);
-
-        ZonedDateTime vnTime =
-                odt.atZoneSameInstant(ZoneId.of("Asia/Ho_Chi_Minh"));
+    private String toDateFormat(String date) {
+        OffsetDateTime odt = parse(date, SONAR_INPUT_FORMAT);
+        ZonedDateTime vnTime = odt.atZoneSameInstant(ZoneId.of("Asia/Ho_Chi_Minh"));
 
         return vnTime.format(OUTPUT_FORMAT);
     }

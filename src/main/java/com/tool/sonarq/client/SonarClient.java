@@ -2,16 +2,15 @@ package com.tool.sonarq.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tool.sonarq.dto.*;
-import com.tool.sonarq.dto.request.ReportRequest;
-import com.tool.sonarq.dto.response.BranchResponse;
-import com.tool.sonarq.dto.response.HotspotResponse;
-import com.tool.sonarq.dto.response.MeasureResponse;
-import com.tool.sonarq.dto.response.SearchResponse;
+import com.tool.sonarq.dto.model.Issue;
+import com.tool.sonarq.dto.model.request.ReportRequest;
+import com.tool.sonarq.dto.model.response.BranchResponse;
+import com.tool.sonarq.dto.model.response.HotspotResponse;
+import com.tool.sonarq.dto.model.response.MeasureResponse;
+import com.tool.sonarq.dto.model.response.SearchResponse;
 import com.tool.sonarq.util.FileReader;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
@@ -25,13 +24,9 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Math.subtractExact;
 import static java.lang.String.format;
 import static java.util.Optional.of;
-import static java.util.Optional.ofNullable;
-import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static reactor.core.publisher.Mono.error;
-import static reactor.core.publisher.Mono.zip;
 
 
 @Slf4j
@@ -45,28 +40,18 @@ public class SonarClient {
     private final FileReader fileReader;
     private final ObjectMapper objectMapper;
 
-    public Mono<IssueExportData> fetchAllIssues(String repository, ReportRequest reportRequest) {
-        return zip(
-                queryIssues(repository, reportRequest),
-                queryBranch(repository, reportRequest.cookie()),
-                queryMeasures(repository, reportRequest.cookie()),
-                queryHotspots(repository, reportRequest.cookie())
-        ).map(tuples ->
-                assembleExportData(tuples.getT1(), tuples.getT2(), tuples.getT3(), tuples.getT4()));
-    }
-
-    private Mono<SearchResponse> queryIssues(String repository, ReportRequest reportRequest) {
+    public Mono<SearchResponse> queryIssues(String repository, ReportRequest reportRequest) {
         return webClient.get()
                 .uri(uri -> buildQueryIssuesUri(uri, repository, reportRequest))
                 .header(HttpHeaders.COOKIE, reportRequest.cookie())
-                .exchangeToMono(response -> toSonarResponseMono(response, repository))
+                .exchangeToMono(response -> toSearchResponseMono(response, repository))
                 .doOnNext(response -> log.info("Sonar response data retrieved for repository: {}", repository))
                 .doOnError(
                         e -> log.error("Failed to fetch response for {}: {}", repository, e.getMessage())
                 );
     }
 
-    private Mono<BranchResponse> queryBranch(String repository, String cookie) {
+    public Mono<BranchResponse> queryBranch(String repository, String cookie) {
         return webClient.get()
                 .uri(uri -> buildQueryBranchUri(uri, repository))
                 .header(HttpHeaders.COOKIE, cookie)
@@ -77,7 +62,7 @@ public class SonarClient {
                 );
     }
 
-    private Mono<MeasureResponse> queryMeasures(String repository, String cookie) {
+    public Mono<MeasureResponse> queryMeasures(String repository, String cookie) {
         return webClient.get()
                 .uri(uri -> buildQueryMeasuresUri(uri, repository))
                 .header(HttpHeaders.COOKIE, cookie)
@@ -88,7 +73,7 @@ public class SonarClient {
                 );
     }
 
-    private Mono<HotspotResponse> queryHotspots(String repository, String cookie) {
+    public Mono<HotspotResponse> queryHotspots(String repository, String cookie) {
         return webClient.get()
                 .uri(uri -> buildHotspotsUri(uri, repository))
                 .header(HttpHeaders.COOKIE, cookie)
@@ -99,71 +84,47 @@ public class SonarClient {
                 );
     }
 
-    private IssueExportData assembleExportData(SearchResponse searchResponse, BranchResponse branchResponse,
-                                               MeasureResponse measureResponse, HotspotResponse hotspotResponse) {
-        List<IssueDto> issueDtos = ofNullable(searchResponse.getIssues())
-                .map(issues -> toListIssuesDto(issues, hotspotResponse))
-                .orElseGet(List::of);
-
-        String branchName = ofNullable(branchResponse.getBranches())
-                .flatMap(branches -> branches.stream().findFirst())
-                .map(Branch::getName)
-                .orElse(EMPTY);
-
-        Double duplications = ofNullable(measureResponse.getComponent())
-                .map(ComponentMeasures::getMeasures)
-                .stream()
-                .flatMap(List::stream)
-                .filter(measure -> "duplicated_lines_density".equals(measure.getMetric()))
-                .findFirst()
-                .map(Measure::getValue)
-                .map(Double::parseDouble)
-                .map(duplicationsPercentage -> duplicationsPercentage / 100.0)
-                .orElse(0.0);
-
-        Integer linesOfCode = ofNullable(measureResponse.getComponent())
-                .map(ComponentMeasures::getMeasures)
-                .stream()
-                .flatMap(List::stream)
-                .filter(measure -> "ncloc".equals(measure.getMetric()))
-                .findFirst()
-                .map(Measure::getValue)
-                .map(Integer::parseInt)
-                .orElse(0);
-
-        Integer linesToCover = ofNullable(measureResponse.getComponent())
-                .map(ComponentMeasures::getMeasures)
-                .stream()
-                .flatMap(List::stream)
-                .filter(measure -> "lines_to_cover".equals(measure.getMetric()))
-                .findFirst()
-                .map(Measure::getValue)
-                .map(Integer::parseInt)
-                .orElse(0);
-
-        Integer uncoveredLines = ofNullable(measureResponse.getComponent())
-                .map(ComponentMeasures::getMeasures)
-                .stream()
-                .flatMap(List::stream)
-                .filter(measure -> "uncovered_lines".equals(measure.getMetric()))
-                .findFirst()
-                .map(Measure::getValue)
-                .map(Integer::parseInt)
-                .orElse(0);
-
-        Integer coveredLine = subtractExact(linesOfCode, uncoveredLines);
-
-        return IssueExportData.builder()
-                .issues(issueDtos)
-                .branch(branchName)
-                .duplications(duplications)
-                .linesOfCode(linesOfCode)
-                .linesToCover(linesToCover)
-                .coveredLines(coveredLine)
+    private URI buildQueryIssuesUri(UriBuilder uri, String repository, ReportRequest reportRequest) {
+        return uri.path("/api/issues/search")
+                .queryParam("components", repository)
+                .queryParam("p", reportRequest.pageNumber())
+                .queryParam("ps", reportRequest.pageSize())
+                .queryParam("issueStatuses", String.join(",", reportRequest.statuses()))
+                .queryParam("additionalFields", "_all")
+                .queryParam("timeZone", timezone)
+                .queryParam(
+                        "facets",
+                        "impactSoftwareQualities,severities,types,impactSeverities,codeVariants"
+                )
+                .queryParam("s", "FILE_LINE")
                 .build();
     }
 
-    private Mono<SearchResponse> toSonarResponseMono(ClientResponse response, String repository) {
+    private URI buildQueryBranchUri(UriBuilder uri, String repository) {
+        return uri.path("/api/project_branches/list")
+                .queryParam("project", repository)
+                .build();
+    }
+
+    private URI buildQueryMeasuresUri(UriBuilder uri, String repository) {
+        return uri.path("/api/measures/component")
+                .queryParam("component", repository)
+                .queryParam(
+                        "metricKeys",
+                        "duplicated_lines_density,uncovered_lines,ncloc,lines_to_cover,coverage")
+                .build();
+    }
+
+    private URI buildHotspotsUri(UriBuilder uri, String repository) {
+        return uri.path("/api/hotspots/search")
+                .queryParam("project", repository)
+                .queryParam("status", "TO_REVIEW")
+                .queryParam("ps", "500")
+                .queryParam("inNewCodePeriod", "false")
+                .build();
+    }
+
+    private Mono<SearchResponse> toSearchResponseMono(ClientResponse response, String repository) {
         if (response.statusCode().isError()) {
             return response
                     .createException()
@@ -181,7 +142,16 @@ public class SonarClient {
                 .switchIfEmpty(error(
                         new IllegalStateException("Sonar response is empty for repository " + repository)
                 ))
-                .map(this::toSonarResponse);
+                .map(this::toSearchResponse);
+    }
+
+    private SearchResponse toSearchResponse(byte[] bytes) {
+        try {
+            return objectMapper.readValue(bytes, SearchResponse.class);
+        } catch (IOException e) {
+            log.error("Error while parsing Sonar Issue response: {}", e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 
     private Mono<BranchResponse> toBranchResponseMono(ClientResponse response) {
@@ -203,15 +173,6 @@ public class SonarClient {
                         new IllegalStateException("Branch response is empty")
                 ))
                 .map(this::toBranchResponse);
-    }
-
-    private SearchResponse toSonarResponse(byte[] bytes) {
-        try {
-            return objectMapper.readValue(bytes, SearchResponse.class);
-        } catch (IOException e) {
-            log.error("Error while parsing Sonar Issue response: {}", e.getMessage());
-            throw new RuntimeException(e);
-        }
     }
 
     private BranchResponse toBranchResponse(byte[] bytes) {
@@ -269,79 +230,13 @@ public class SonarClient {
         }
     }
 
-    private List<IssueDto> toListIssuesDto(List<Issue> issues, HotspotResponse hotspotResponse) {
-        return issues.stream()
-                .map(issue -> toIssueDto(issue, hotspotResponse))
-                .toList();
-    }
-
-    private IssueDto toIssueDto(Issue issue, HotspotResponse hotspotResponse) {
-        IssueDto dto = new IssueDto();
-        BeanUtils.copyProperties(issue, dto);
-        String hotspot = ofNullable(hotspotResponse)
-                .map(HotspotResponse::getHotspots)
-                .stream()
-                .flatMap(List::stream)
-                .filter(hs -> isHotspotBelongToIssue(issue, hs))
-                .findFirst()
-                .map(Hotspot::getStatus)
-                .orElse(EMPTY);
-        dto.setHotspot(hotspot);
-        return dto;
-    }
-
-    private boolean isHotspotBelongToIssue(Issue issue, Hotspot hotspot) {
-        return hotspot.getComponent().equals(issue.getComponent())
-                && hotspot.getLine().equals(issue.getLine());
-    }
-
-    private URI buildQueryIssuesUri(UriBuilder uri, String repository, ReportRequest reportRequest) {
-        return uri.path("/api/issues/search")
-                .queryParam("components", repository)
-                .queryParam("p", reportRequest.pageNumber())
-                .queryParam("ps", reportRequest.pageSize())
-                .queryParam("issueStatuses", String.join(",", reportRequest.statuses()))
-                .queryParam("additionalFields", "_all")
-                .queryParam("timeZone", timezone)
-                .queryParam(
-                        "facets",
-                        "impactSoftwareQualities,severities,types,impactSeverities,codeVariants"
-                )
-                .queryParam("s", "FILE_LINE")
-                .build();
-    }
-
-    private URI buildQueryBranchUri(UriBuilder uri, String repository) {
-        return uri.path("/api/project_branches/list")
-                .queryParam("project", repository)
-                .build();
-    }
-
-    private URI buildQueryMeasuresUri(UriBuilder uri, String repository) {
-        return uri.path("/api/measures/component")
-                .queryParam("component", repository)
-                .queryParam(
-                        "metricKeys",
-                        "duplicated_lines_density,uncovered_lines,ncloc,lines_to_cover,coverage")
-                .build();
-    }
-
-    private URI buildHotspotsUri(UriBuilder uri, String repository) {
-        return uri.path("/api/hotspots/search")
-                .queryParam("project", repository)
-                .queryParam("status", "TO_REVIEW")
-                .queryParam("ps", "500")
-                .queryParam("inNewCodePeriod", "false")
-                .build();
-    }
-
     /**
      * for testing purpose when development to mock response from SonarQ
      * @param repository
      * @param pageSize
      * @return
      */
-    public List<Issue> fetchAllIssuesMock(String repository, final int pageSize) {
+    public List<Issue> queryIssuesMock(String repository, final int pageSize) {
         List<Issue> issues = new ArrayList<>();
         try {
             issues = of(

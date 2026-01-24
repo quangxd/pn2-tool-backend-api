@@ -1,6 +1,6 @@
 package com.tool.sonarq.service.impl;
 
-import com.tool.sonarq.dto.request.ReportRequest;
+import com.tool.sonarq.dto.model.request.ReportRequest;
 import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import com.tool.sonarq.service.ReportService;

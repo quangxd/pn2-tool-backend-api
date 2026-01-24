@@ -1,6 +1,6 @@
 package com.tool.sonarq.service;
 
-import com.tool.sonarq.dto.request.ReportRequest;
+import com.tool.sonarq.dto.model.request.ReportRequest;
 import reactor.core.publisher.Mono;
 
 public interface ReportService {

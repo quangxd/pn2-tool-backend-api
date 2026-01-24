@@ -1,5 +1,6 @@
 package com.tool.sonarq.dto;
 
+import com.tool.sonarq.dto.model.Impact;
 import lombok.Data;
 import java.util.List;
 

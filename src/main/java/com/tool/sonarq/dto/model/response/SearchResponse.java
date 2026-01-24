@@ -1,9 +1,9 @@
-package com.tool.sonarq.dto.response;
+package com.tool.sonarq.dto.model.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.tool.sonarq.dto.Facet;
-import com.tool.sonarq.dto.Issue;
-import com.tool.sonarq.dto.Paging;
+import com.tool.sonarq.dto.model.Facet;
+import com.tool.sonarq.dto.model.Issue;
+import com.tool.sonarq.dto.model.Paging;
 import lombok.Data;
 
 import java.util.List;
