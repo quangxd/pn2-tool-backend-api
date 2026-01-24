@@ -1,6 +1,6 @@
 package com.tool.sonarq.service;
 
-import com.tool.sonarq.dto.response.IssueExportData;
+import com.tool.sonarq.dto.IssueExportData;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;

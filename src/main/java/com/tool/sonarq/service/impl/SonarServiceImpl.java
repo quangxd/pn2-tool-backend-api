@@ -1,8 +1,8 @@
 package com.tool.sonarq.service.impl;
 
 import com.tool.sonarq.client.SonarClient;
+import com.tool.sonarq.dto.IssueExportData;
 import com.tool.sonarq.dto.request.ReportRequest;
-import com.tool.sonarq.dto.response.IssueExportData;
 import com.tool.sonarq.service.SonarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,7 @@
 package com.tool.sonarq.service.impl;
 
 import com.tool.sonarq.dto.request.ReportRequest;
+import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import com.tool.sonarq.service.ReportService;
 import com.tool.sonarq.service.SonarService;
@@ -30,6 +31,8 @@ public class ReportServiceImpl implements ReportService {
                         5
                 )
                 .collectMap(Map.Entry::getKey, Map.Entry::getValue)
-                .flatMap(data -> excelService.generateReport(data, reportRequest.rowStartIndex()));
+                .filter(data -> !data.isEmpty())
+                .flatMap(data -> excelService.generateReport(data, reportRequest.rowStartIndex()))
+                .switchIfEmpty(Mono.error(new BizException("No data found to export")));
     }
 }

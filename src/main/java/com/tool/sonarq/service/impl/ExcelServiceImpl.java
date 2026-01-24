@@ -1,8 +1,8 @@
 package com.tool.sonarq.service.impl;
 
 import com.tool.sonarq.dto.Impact;
-import com.tool.sonarq.dto.Issue;
-import com.tool.sonarq.dto.response.IssueExportData;
+import com.tool.sonarq.dto.IssueDto;
+import com.tool.sonarq.dto.IssueExportData;
 import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
@@ -49,57 +49,99 @@ public class ExcelServiceImpl implements ExcelService {
     }
 
     private byte[] createExcelSheet(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException {
-        ofNullable(dataMap)
-                .filter(this::isEmptyVulnerability)
-                .map(Map::keySet)
-                .map(keys -> join(",", keys))
-                .ifPresent(
-                        repoNames -> log.info("No vulnerabilities found in repositories: {}", repoNames)
-                );
-
         try (InputStream is =
                      of(getClass())
                              .map(Class::getClassLoader)
-                             .map(classLoader -> classLoader.getResourceAsStream("templates/sonarqube_export_template.xlsx"))
+                             .map(classLoader ->
+                                     classLoader.getResourceAsStream("templates/sonarqube_export_template.xlsx"))
                              .orElseThrow(() -> new RuntimeException("No templates found!"));
 
              XSSFWorkbook workbook = new XSSFWorkbook(is);
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
             Sheet template = workbook.getSheet("template");
-            for (var entry : ofNullable(dataMap)
-                    .map(Map::entrySet)
-                    .orElseThrow(() -> new RuntimeException("No vulnerabilities to export!"))) {
+            for (var entry : dataMap.entrySet()) {
+                Sheet sheet = workbook.cloneSheet(workbook.getSheetIndex(template));
+                workbook.setSheetName(workbook.getSheetIndex(sheet), entry.getKey());
+                List<IssueDto> issues = of(entry.getValue())
+                        .map(IssueExportData::getIssues)
+                        .orElseGet(List::of);
 
-                Sheet sheet = workbook.cloneSheet(
-                        workbook.getSheetIndex(template));
-                workbook.setSheetName(
-                        workbook.getSheetIndex(sheet),
-                        entry.getKey());
-
-                fillHeader(sheet,
-                        entry.getKey(),
-                        ofNullable(entry.getValue())
-                                .map(IssueExportData::getBranch)
-                                .orElse(EMPTY),
-                        now().format(OUTPUT_FORMAT));
-                fillData(sheet,
-                        ofNullable(entry.getValue())
-                                .map(IssueExportData::getIssues)
-                                .orElseGet(List::of),
-                        rowStartIndex
-                );
+                fillHeader(sheet, entry.getKey(), entry.getValue(), now().format(OUTPUT_FORMAT));
+                fillData(sheet, issues, rowStartIndex);
             }
-
+            int templateIndex = workbook.getSheetIndex("template");
+            if(templateIndex >= 0) workbook.removeSheetAt(templateIndex);
+//            workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
             workbook.write(out);
+
             return out.toByteArray();
         }
     }
 
-    private void fillData(Sheet sheet, List<Issue> issues, Integer rowStartIndex) {
+    private void fillHeader(Sheet sheet, String repository,
+                            IssueExportData issueExportData, String analyzedDate) {
+        //Set report name
+        Row reportName = sheet.getRow(0);
+        Cell reportNameCell = reportName.getCell(0);
+        reportNameCell.setCellValue(format("Service Report - %s", repository));
+
+        //Set service name
+        Row serviceNameRow = sheet.getRow(2);
+        Cell serviceNameCell = serviceNameRow.getCell(1);
+        serviceNameCell.setCellValue(repository);
+
+        //Set project key
+        Row projectKeyRow = sheet.getRow(3);
+        Cell projectKeyCell = projectKeyRow.getCell(1);
+        projectKeyCell.setCellValue(repository);
+
+        //Set branch
+        Row branchRow = sheet.getRow(4);
+        Cell branchCell = branchRow.getCell(1);
+        branchCell.setCellValue(issueExportData.getBranch());
+
+        //Set analyzed date 1
+        Row analyzedDateRow1 = sheet.getRow(5);
+        Cell analyzedDateCell1 = analyzedDateRow1.getCell(1);
+        analyzedDateCell1.setCellValue(analyzedDate);
+
+        Row bugs = sheet.getRow(8);
+        Cell cell = bugs.getCell(1);
+        cell.setBlank();
+        String bugsDynamicFormula = format("COUNTIF(B%d:B%d,\"BUG\")", "startRowIndex", "startRowIndex + issues.size()");
+        cell.setCellFormula(bugsDynamicFormula);
+
+        //Set % duplications
+        Row duplications = sheet.getRow(14);
+        Cell duplicationsCell = duplications.getCell(1);
+        duplicationsCell.setCellValue(issueExportData.getDuplications());
+
+        //Set lines of code
+        Row lineOfCodeRow = sheet.getRow(15);
+        Cell lineOfCodeCell = lineOfCodeRow.getCell(1);
+        lineOfCodeCell.setCellValue(issueExportData.getLinesOfCode());
+
+        //Set lines to cover
+        Row linesToCover = sheet.getRow(16);
+        Cell linesToCoverCell = linesToCover.getCell(1);
+        linesToCoverCell.setCellValue(issueExportData.getLinesToCover());
+
+        //Set covered lines
+        Row coveredLines = sheet.getRow(17);
+        Cell coveredLinesCell = coveredLines.getCell(1);
+        coveredLinesCell.setCellValue(issueExportData.getCoveredLines());
+
+        //Set analyzed date 2
+        Row analyzedDateRow2 = sheet.getRow(18);
+        Cell analyzedDateCell2 = analyzedDateRow2.getCell(1);
+        analyzedDateCell2.setCellValue(analyzedDate);
+    }
+
+    private void fillData(Sheet sheet, List<IssueDto> issues, Integer rowStartIndex) {
         Integer rowIndex = ofNullable(rowStartIndex).orElse(23);
 
-        for (Issue issue : issues) {
+        for (IssueDto issue : issues) {
             Row row = sheet.createRow(rowIndex++);
 
             // Column 0: Issue Key
@@ -138,62 +180,23 @@ public class ExcelServiceImpl implements ExcelService {
             // Column 9: Tags (comma separated)
             row.createCell(9).setCellValue(
                     of(issue)
-                            .map(Issue::getTags)
+                            .map(IssueDto::getTags)
                             .map(tags -> join(",", tags))
                             .orElse(EMPTY)
             );
 
             // Column 10: Hotspot Review status
-            row.createCell(10).setCellValue("N/A");
+            row.createCell(10).setCellValue(issue.getHotspot());
 
             // Column 11: Created date
             row.createCell(11).setCellValue(toDateFormat(issue.getCreationDate()));
 
             // Column 12: Updated date
-            row.createCell(12).setCellValue(toDateFormat(issue.getCreationDate()));
+            row.createCell(12).setCellValue(toDateFormat(issue.getUpdateDate()));
 
             // Column 13: Author
             row.createCell(13).setCellValue(issue.getAuthor());
         }
-    }
-
-    private void fillHeader(Sheet sheet, String repository, String branch, String analyzedDate) {
-        //Set report name
-        Row reportName = sheet.getRow(0);
-        Cell reportNameCell = reportName.getCell(0);
-        reportNameCell.setCellValue(format("Service Report - %s", repository));
-
-        //Set service name
-        Row serviceNameRow = sheet.getRow(2);
-        Cell serviceNameCell = serviceNameRow.getCell(1);
-        serviceNameCell.setCellValue(repository);
-
-        //Set project key
-        Row projectKeyRow = sheet.getRow(3);
-        Cell projectKeyCell = projectKeyRow.getCell(1);
-        projectKeyCell.setCellValue(repository);
-
-        //Set branch
-        Row branchRow = sheet.getRow(4);
-        Cell branchCell = branchRow.getCell(1);
-        branchCell.setCellValue(branch);
-
-        //Set analyzed date 1
-        Row analyzedDateRow1 = sheet.getRow(5);
-        Cell analyzedDateCell1 = analyzedDateRow1.getCell(1);
-        analyzedDateCell1.setCellValue(analyzedDate);
-
-        //Set analyzed date 2
-        Row analyzedDateRow2 = sheet.getRow(18);
-        Cell analyzedDateCell2 = analyzedDateRow2.getCell(1);
-        analyzedDateCell2.setCellValue(analyzedDate);
-    }
-
-    private boolean isEmptyVulnerability(Map<String, IssueExportData> issues) {
-        return issues.values()
-                .stream()
-                .map(IssueExportData::getIssues)
-                .allMatch(List::isEmpty);
     }
 
     private String toDateFormat(String sonarDate) {
