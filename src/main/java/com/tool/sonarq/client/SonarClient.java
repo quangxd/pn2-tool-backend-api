@@ -85,43 +85,51 @@ public class SonarClient {
     }
 
     private URI buildQueryIssuesUri(UriBuilder uri, String repository, ReportRequest reportRequest) {
-        return uri.path("/api/issues/search")
+        URI issuesUri = uri.path("/api/issues/search")
                 .queryParam("components", repository)
                 .queryParam("p", reportRequest.pageNumber())
                 .queryParam("ps", reportRequest.pageSize())
                 .queryParam("issueStatuses", String.join(",", reportRequest.statuses()))
                 .queryParam("additionalFields", "_all")
                 .queryParam("timeZone", timezone)
-                .queryParam(
-                        "facets",
-                        "impactSoftwareQualities,severities,types,impactSeverities,codeVariants"
-                )
+                .queryParam("facets", "impactSoftwareQualities,severities,types,impactSeverities,codeVariants")
                 .queryParam("s", "FILE_LINE")
                 .build();
+
+        log.info("issues search url: {}", issuesUri);
+        return issuesUri;
     }
 
     private URI buildQueryBranchUri(UriBuilder uri, String repository) {
-        return uri.path("/api/project_branches/list")
+        URI branchUri = uri.path("/api/project_branches/list")
                 .queryParam("project", repository)
                 .build();
+
+        log.info("project branches url: {}", branchUri);
+        return branchUri;
     }
 
     private URI buildQueryMeasuresUri(UriBuilder uri, String repository) {
-        return uri.path("/api/measures/component")
+        URI measuresUri = uri.path("/api/measures/component")
                 .queryParam("component", repository)
-                .queryParam(
-                        "metricKeys",
-                        "duplicated_lines_density,uncovered_lines,ncloc,lines_to_cover,coverage")
+                .queryParam("metricKeys", "duplicated_lines_density,uncovered_lines,ncloc,lines_to_cover,coverage")
                 .build();
+
+        log.info("measuresUri search url: {}", measuresUri);
+        return measuresUri;
     }
 
     private URI buildHotspotsUri(UriBuilder uri, String repository) {
-        return uri.path("/api/hotspots/search")
+        URI hotspotUri = uri.path("/api/hotspots/search")
                 .queryParam("project", repository)
                 .queryParam("status", "TO_REVIEW")
                 .queryParam("ps", "500")
                 .queryParam("inNewCodePeriod", "false")
+                .queryParam("onlyMine", "false")
                 .build();
+
+        log.info("hotspots search url: {}", hotspotUri);
+        return hotspotUri;
     }
 
     private Mono<SearchResponse> toSearchResponseMono(ClientResponse response, String repository) {

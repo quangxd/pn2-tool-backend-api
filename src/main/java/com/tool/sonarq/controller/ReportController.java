@@ -3,6 +3,7 @@ package com.tool.sonarq.controller;
 import com.tool.sonarq.dto.model.request.ReportRequest;
 import com.tool.sonarq.service.impl.ReportServiceImpl;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import static java.lang.String.format;
 import static java.time.LocalDateTime.now;
 import static java.time.format.DateTimeFormatter.ofPattern;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/tools")
 @RequiredArgsConstructor
@@ -34,7 +36,8 @@ public class ReportController {
     }
 
     @PostMapping("/sonar/export")
-    public Mono<ResponseEntity<byte[]>> generateReport1(@RequestBody ReportRequest request) {
+    public Mono<ResponseEntity<byte[]>> generateReport(@RequestBody ReportRequest request) {
+        log.info("[ReportController] Generating report for {}", request.repositories());
         return reportService.generate(request)
                 .map(this::toReportResponse);
     }

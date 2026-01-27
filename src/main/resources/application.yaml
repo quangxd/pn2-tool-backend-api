@@ -3,13 +3,4 @@ server:
 
 sonar:
   base-url: http://192.168.2.158:9000
-  page-size: 500
   timezone: Etc/GMT-7
-
-spring:
-  task:
-    execution:
-      pool:
-        core-size: 5
-        max-size: 10
-        queue-capacity: 50

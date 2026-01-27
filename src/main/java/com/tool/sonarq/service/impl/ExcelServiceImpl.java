@@ -6,9 +6,7 @@ import com.tool.sonarq.dto.model.Impact;
 import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -37,6 +35,7 @@ import static reactor.core.publisher.Mono.fromCallable;
 @Service
 public class ExcelServiceImpl implements ExcelService {
 
+    private static final Integer SHEET_DATA_START_INDEX = 23;
     private static final DateTimeFormatter SONAR_INPUT_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ");
     private static final DateTimeFormatter OUTPUT_FORMAT = DateTimeFormatter.ofPattern("d/M/yyyy  H:mm:ss");
 
@@ -60,6 +59,7 @@ public class ExcelServiceImpl implements ExcelService {
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
             Sheet template = workbook.getSheet("template");
+            Integer rowIndex = ofNullable(rowStartIndex).orElse(SHEET_DATA_START_INDEX);
             for (var entry : dataMap.entrySet()) {
                 Sheet sheet = workbook.cloneSheet(workbook.getSheetIndex(template));
                 workbook.setSheetName(workbook.getSheetIndex(sheet), entry.getKey());
@@ -67,12 +67,14 @@ public class ExcelServiceImpl implements ExcelService {
                         .map(IssueExportData::getIssues)
                         .orElseGet(List::of);
 
-                fillHeader(sheet, entry.getKey(), entry.getValue(), now().format(OUTPUT_FORMAT));
-                fillData(sheet, issues, rowStartIndex);
+                fillHeader(sheet, entry.getKey(), entry.getValue(), now().format(OUTPUT_FORMAT), rowIndex);
+                fillData(sheet, issues, rowIndex);
             }
+            Sheet dashboard = workbook.getSheet("Dashboard");
+            fillDashboard(dashboard, dataMap);
             int templateIndex = workbook.getSheetIndex("template");
             if(templateIndex >= 0) workbook.removeSheetAt(templateIndex);
-//            workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
+            workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
             workbook.write(out);
 
             return out.toByteArray();
@@ -80,7 +82,8 @@ public class ExcelServiceImpl implements ExcelService {
     }
 
     private void fillHeader(Sheet sheet, String repository,
-                            IssueExportData issueExportData, String analyzedDate) {
+                            IssueExportData issueExportData, String analyzedDate, Integer rowStartIndex) {
+        Integer indexOfLastIssueRow = rowStartIndex + issueExportData.getIssues().size();
         //Set report name
         Row reportName = sheet.getRow(0);
         Cell reportNameCell = reportName.getCell(0);
@@ -106,11 +109,49 @@ public class ExcelServiceImpl implements ExcelService {
         Cell analyzedDateCell1 = analyzedDateRow1.getCell(1);
         analyzedDateCell1.setCellValue(analyzedDate);
 
-        Row bugs = sheet.getRow(8);
-        Cell cell = bugs.getCell(1);
-        cell.setBlank();
-        String bugsDynamicFormula = format("COUNTIF(B%d:B%d,\"BUG\")", "startRowIndex", "startRowIndex + issues.size()");
-        cell.setCellFormula(bugsDynamicFormula);
+        //Set formula for Bugs
+        Row bugsRow = sheet.getRow(8);
+        Cell bugsCell = bugsRow.getCell(1);
+        bugsCell.setBlank();
+        String bugsDynamicFormula = format("COUNTIF(B%d:B%d,\"BUG\")", rowStartIndex, indexOfLastIssueRow);
+        bugsCell.setCellFormula(bugsDynamicFormula);
+
+        //Set formula for Vulnerabilities
+        Row vulnerabilitiesRow = sheet.getRow(9);
+        Cell vulnerabilitiesCell = vulnerabilitiesRow.getCell(1);
+        vulnerabilitiesCell.setBlank();
+        String vulnerabilitiesDynamicFormula = format("COUNTIF(B%d:B%d,\"VULNERABILITY\")", rowStartIndex, indexOfLastIssueRow);
+        vulnerabilitiesCell.setCellFormula(vulnerabilitiesDynamicFormula);
+
+        //Set formula for Code Smells
+        Row codeSmellsRow = sheet.getRow(10);
+        Cell codeSmellsCell = codeSmellsRow.getCell(1);
+        codeSmellsCell.setBlank();
+        String codeSmellsDynamicFormula = format("COUNTIF(B%d:B%d,\"CODE_SMELL\")", rowStartIndex, indexOfLastIssueRow);
+        codeSmellsCell.setCellFormula(codeSmellsDynamicFormula);
+
+        //Set formula for Security Hotspots
+        Row securityHotspotsRow = sheet.getRow(11);
+        Cell securityHotspotsCell = securityHotspotsRow.getCell(1);
+        securityHotspotsCell.setBlank();
+        String securityHotspotsDynamicFormula =
+                format("COUNTIF(B%d:B%d,\"SECURITY_HOTSPOT\")", rowStartIndex, indexOfLastIssueRow);
+        securityHotspotsCell.setCellFormula(securityHotspotsDynamicFormula);
+
+        //Set formula for count Security Hotspots
+        Row securityHotspotsCounterRow = sheet.getRow(11);
+        Cell securityHotspotCountersCell = securityHotspotsCounterRow.getCell(3);
+        securityHotspotCountersCell.setBlank();
+        String securityHotspotsCounterDynamicFormula =
+                format("COUNTIF(K%d:K%d,\"SAFE\")+COUNTIF(K%d:K%d,\"FIX\")", rowStartIndex, indexOfLastIssueRow,
+                        rowStartIndex, indexOfLastIssueRow);
+        securityHotspotCountersCell.setCellFormula(securityHotspotsCounterDynamicFormula);
+
+        //Set formula for Hotspots Reviewed percentage
+        Row hotspotsReviewedPercentageRow = sheet.getRow(12);
+        Cell hotspotsReviewedPercentageCell = hotspotsReviewedPercentageRow.getCell(1);
+        hotspotsReviewedPercentageCell.setBlank();
+        hotspotsReviewedPercentageCell.setCellFormula("IF(B12=0,1,D12/B12)");
 
         //Set % duplications
         Row duplications = sheet.getRow(14);
@@ -139,10 +180,8 @@ public class ExcelServiceImpl implements ExcelService {
     }
 
     private void fillData(Sheet sheet, List<IssueDto> issues, Integer rowStartIndex) {
-        Integer rowIndex = ofNullable(rowStartIndex).orElse(23);
-
         for (IssueDto issue : issues) {
-            Row row = sheet.createRow(rowIndex++);
+            Row row = sheet.createRow(rowStartIndex++);
 
             // Column 0: Issue Key
             row.createCell(0).setCellValue(issue.getKey());
@@ -197,6 +236,65 @@ public class ExcelServiceImpl implements ExcelService {
             // Column 13: Author
             row.createCell(13).setCellValue(issue.getAuthor());
         }
+    }
+
+    private void fillDashboard(Sheet sheet, Map<String, IssueExportData> dataMap) {
+        int BEGIN_INDEX_TO_MOVE_DOWN = 7;
+        int NUMBER_OF_SAMPLE_DATA_ROW = 3;
+        int NUMBER_OF_ROW_ADDED = dataMap.size() - NUMBER_OF_SAMPLE_DATA_ROW;
+        int currentDataStartRowIndex = 4;
+        sheet.shiftRows(BEGIN_INDEX_TO_MOVE_DOWN, sheet.getLastRowNum(), NUMBER_OF_ROW_ADDED, true, false);
+        Workbook workbook = sheet.getWorkbook();
+        Row templateRow = sheet.getRow(4);
+        for (var entry : dataMap.entrySet()) {
+            for (int i = 0; i < 16; i++) {
+                Row startRow = sheet.getRow(currentDataStartRowIndex);
+                if (startRow == null) {
+                    startRow = sheet.createRow(currentDataStartRowIndex);
+                }
+                Cell cell = startRow.getCell(i);
+                if (cell == null) {
+                    cell = startRow.createCell(i);
+                }
+                Cell templateCell = templateRow.getCell(i);
+                copyCellStyle(templateCell, cell, workbook);
+                cell.setBlank();
+                String formula = getCellFormula(entry.getKey(), currentDataStartRowIndex, i);
+                cell.setCellFormula(formula);
+            }
+            currentDataStartRowIndex++;
+        }
+    }
+
+    private String getCellFormula(String sheetName, int rowIndex, int cellIndex) {
+        int rowNumber = rowIndex + 1;
+        return switch (cellIndex) {
+            case 0  -> format("'%s'!B%d", sheetName, 3);
+            case 1  -> format("'%s'!B%d", sheetName, 4);
+            case 2  -> format("'%s'!B%d", sheetName, 16);
+            case 3  -> format("'%s'!B%d", sheetName, 17);
+            case 4  -> format("'%s'!B%d", sheetName, 18);
+            case 5  -> format("IF(D%d=0,0,E%d/D%d)", rowNumber, rowNumber, rowNumber);
+            case 6  -> format("'%s'!B%d", sheetName, 9);
+            case 7  -> format("'%s'!B%d", sheetName, 10);
+            case 8  -> format("'%s'!B%d", sheetName, 11);
+            case 9  -> format("'%s'!B%d", sheetName, 12);
+            case 10 -> format("'%s'!B%d", sheetName, 13);
+            case 11 -> format("'%s'!B%d", sheetName, 15);
+            case 12 -> format("'%s'!B%d", sheetName, 19);
+            case 14 -> format("ROUND(J%d*K%d,0)", rowNumber, rowNumber);
+            case 15 -> format("J%d", rowNumber);
+            default -> "0";
+        };
+    }
+
+    private void copyCellStyle(Cell source, Cell target, Workbook workbook) {
+        if (source == null || target == null) return;
+
+        CellStyle newStyle = workbook.createCellStyle();
+        newStyle.cloneStyleFrom(source.getCellStyle());
+
+        target.setCellStyle(newStyle);
     }
 
     private String toDateFormat(String date) {
