@@ -6,7 +6,11 @@ import com.tool.sonarq.dto.model.Impact;
 import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.service.ExcelService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -35,7 +39,10 @@ import static reactor.core.publisher.Mono.fromCallable;
 @Service
 public class ExcelServiceImpl implements ExcelService {
 
-    private static final Integer SHEET_DATA_START_INDEX = 23;
+    private static final Integer TEMPLATE_SHEET_DATA_START_INDEX = 23;
+    private static final Integer TEMPLATE_SHEET_DATA_END_INDEX = 50;
+    private static final String TEMPLATE_SHEET_NAME = "template";
+    private static final String DASHBOARD_SHEET_NAME = "Dashboard";
     private static final DateTimeFormatter SONAR_INPUT_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZ");
     private static final DateTimeFormatter OUTPUT_FORMAT = DateTimeFormatter.ofPattern("d/M/yyyy  H:mm:ss");
 
@@ -58,11 +65,12 @@ public class ExcelServiceImpl implements ExcelService {
              XSSFWorkbook workbook = new XSSFWorkbook(is);
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
-            Sheet template = workbook.getSheet("template");
-            Integer rowIndex = ofNullable(rowStartIndex).orElse(SHEET_DATA_START_INDEX);
+            Sheet template = workbook.getSheet(TEMPLATE_SHEET_NAME);
+            Integer rowIndex = ofNullable(rowStartIndex).orElse(TEMPLATE_SHEET_DATA_START_INDEX);
             for (var entry : dataMap.entrySet()) {
                 Sheet sheet = workbook.cloneSheet(workbook.getSheetIndex(template));
                 workbook.setSheetName(workbook.getSheetIndex(sheet), entry.getKey());
+                clearDataRows(sheet, rowIndex, TEMPLATE_SHEET_DATA_END_INDEX);
                 List<IssueDto> issues = of(entry.getValue())
                         .map(IssueExportData::getIssues)
                         .orElseGet(List::of);
@@ -70,9 +78,9 @@ public class ExcelServiceImpl implements ExcelService {
                 fillHeader(sheet, entry.getKey(), entry.getValue(), now().format(OUTPUT_FORMAT), rowIndex);
                 fillData(sheet, issues, rowIndex);
             }
-            Sheet dashboard = workbook.getSheet("Dashboard");
+            Sheet dashboard = workbook.getSheet(DASHBOARD_SHEET_NAME);
             fillDashboard(dashboard, dataMap);
-            int templateIndex = workbook.getSheetIndex("template");
+            int templateIndex = workbook.getSheetIndex(TEMPLATE_SHEET_NAME);
             if(templateIndex >= 0) workbook.removeSheetAt(templateIndex);
             workbook.getCreationHelper().createFormulaEvaluator().evaluateAll();
             workbook.write(out);
@@ -263,6 +271,17 @@ public class ExcelServiceImpl implements ExcelService {
                 cell.setCellFormula(formula);
             }
             currentDataStartRowIndex++;
+        }
+    }
+
+    private void clearDataRows(Sheet sheet, int startRow, int endRow) {
+        for (int r = startRow; r <= endRow; r++) {
+            Row row = sheet.getRow(r);
+            if (row == null) continue;
+
+            for (Cell cell : row) {
+                cell.setBlank();
+            }
         }
     }
 
