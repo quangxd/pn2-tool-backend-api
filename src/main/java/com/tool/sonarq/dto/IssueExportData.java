@@ -13,6 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 public class IssueExportData {
     private String branch;
+    private Integer securityHotspot;
+    private Double hotspotReviewed;
+    private Double coverage;
     private Double duplications;
     private Integer linesOfCode;
     private Integer linesToCover;
