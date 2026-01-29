@@ -25,6 +25,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static java.lang.String.format;
 import static java.lang.String.join;
@@ -47,14 +48,14 @@ public class ExcelServiceImpl implements ExcelService {
     private static final DateTimeFormatter OUTPUT_FORMAT = DateTimeFormatter.ofPattern("d/M/yyyy  H:mm:ss");
 
     public Mono<byte[]> generateReport(Map<String, IssueExportData> dataMap, Integer rowStartIndex) {
-        return fromCallable(() -> createExcelSheet(dataMap, rowStartIndex))
+        return fromCallable(() -> createExcel(dataMap, rowStartIndex))
                 .subscribeOn(Schedulers.boundedElastic())
                 .onErrorMap(IOException.class,
                         ex -> new BizException(ex.getMessage())
                 );
     }
 
-    private byte[] createExcelSheet(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException {
+    private byte[] createExcel(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException {
         try (InputStream is =
                      of(getClass())
                              .map(Class::getClassLoader)
@@ -65,6 +66,7 @@ public class ExcelServiceImpl implements ExcelService {
              XSSFWorkbook workbook = new XSSFWorkbook(is);
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
+            logTotalIssues(dataMap);
             Sheet template = workbook.getSheet(TEMPLATE_SHEET_NAME);
             Integer rowIndex = ofNullable(rowStartIndex).orElse(TEMPLATE_SHEET_DATA_START_INDEX);
             for (var entry : dataMap.entrySet()) {
@@ -138,13 +140,11 @@ public class ExcelServiceImpl implements ExcelService {
         String codeSmellsDynamicFormula = format("COUNTIF(B%d:B%d,\"CODE_SMELL\")", rowStartIndex, indexOfLastIssueRow);
         codeSmellsCell.setCellFormula(codeSmellsDynamicFormula);
 
-        //Set formula for Security Hotspots
+        //Set data for Security Hotspots
         Row securityHotspotsRow = sheet.getRow(11);
         Cell securityHotspotsCell = securityHotspotsRow.getCell(1);
         securityHotspotsCell.setBlank();
-        String securityHotspotsDynamicFormula =
-                format("COUNTIF(B%d:B%d,\"SECURITY_HOTSPOT\")", rowStartIndex, indexOfLastIssueRow);
-        securityHotspotsCell.setCellFormula(securityHotspotsDynamicFormula);
+        securityHotspotsCell.setCellValue(issueExportData.getSecurityHotspot());
 
         //Set formula for count Security Hotspots
         Row securityHotspotsCounterRow = sheet.getRow(11);
@@ -155,11 +155,17 @@ public class ExcelServiceImpl implements ExcelService {
                         rowStartIndex, indexOfLastIssueRow);
         securityHotspotCountersCell.setCellFormula(securityHotspotsCounterDynamicFormula);
 
-        //Set formula for Hotspots Reviewed percentage
+        //Set data for Hotspots Reviewed percentage
         Row hotspotsReviewedPercentageRow = sheet.getRow(12);
         Cell hotspotsReviewedPercentageCell = hotspotsReviewedPercentageRow.getCell(1);
         hotspotsReviewedPercentageCell.setBlank();
-        hotspotsReviewedPercentageCell.setCellFormula("IF(B12=0,1,D12/B12)");
+        hotspotsReviewedPercentageCell.setCellValue(issueExportData.getHotspotReviewed());
+
+        //Set data for coverage percentage
+        Row coveragePercentageRow = sheet.getRow(13);
+        Cell coveragePercentageCell = coveragePercentageRow.getCell(1);
+        coveragePercentageCell.setBlank();
+        coveragePercentageCell.setCellValue(issueExportData.getCoverage());
 
         //Set % duplications
         Row duplications = sheet.getRow(14);
@@ -321,5 +327,15 @@ public class ExcelServiceImpl implements ExcelService {
         ZonedDateTime vnTime = odt.atZoneSameInstant(ZoneId.of("Asia/Ho_Chi_Minh"));
 
         return vnTime.format(OUTPUT_FORMAT);
+    }
+
+    private void logTotalIssues(Map<String, IssueExportData> dataMap) {
+        int totalIssuesCount = dataMap.values().stream()
+                .map(IssueExportData::getIssues)
+                .filter(Objects::nonNull)
+                .mapToInt(List::size)
+                .sum();
+
+        log.info("[ExcelServiceImpl] Total sonarQ issues to be exported: {}", totalIssuesCount);
     }
 }

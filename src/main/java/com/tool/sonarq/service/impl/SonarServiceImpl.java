@@ -3,7 +3,11 @@ package com.tool.sonarq.service.impl;
 import com.tool.sonarq.client.SonarClient;
 import com.tool.sonarq.dto.IssueDto;
 import com.tool.sonarq.dto.IssueExportData;
-import com.tool.sonarq.dto.model.*;
+import com.tool.sonarq.dto.model.Branch;
+import com.tool.sonarq.dto.model.ComponentMeasures;
+import com.tool.sonarq.dto.model.Hotspot;
+import com.tool.sonarq.dto.model.Issue;
+import com.tool.sonarq.dto.model.Measure;
 import com.tool.sonarq.dto.model.request.ReportRequest;
 import com.tool.sonarq.dto.model.response.BranchResponse;
 import com.tool.sonarq.dto.model.response.HotspotResponse;
@@ -18,6 +22,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
+import static java.lang.Math.addExact;
 import static java.lang.Math.subtractExact;
 import static java.util.Optional.ofNullable;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
@@ -28,6 +33,8 @@ import static reactor.core.publisher.Mono.zip;
 @RequiredArgsConstructor
 public class SonarServiceImpl implements SonarService {
 
+    private static final String REVIEWED = "REVIEWED";
+    private static final String ACKNOWLEDGED = "ACKNOWLEDGED";
     private final SonarClient sonarClient;
 
     @Override
@@ -40,21 +47,42 @@ public class SonarServiceImpl implements SonarService {
                 sonarClient.queryIssues(repository, reportRequest),
                 sonarClient.queryBranch(repository, reportRequest.cookie()),
                 sonarClient.queryMeasures(repository, reportRequest.cookie()),
-                sonarClient.queryHotspots(repository, reportRequest.cookie())
+                sonarClient.queryHotspots(repository, reportRequest.cookie()),
+                sonarClient.queryHotspotsWithStatusAndResolution(repository, reportRequest.cookie(), REVIEWED, ACKNOWLEDGED)
         ).map(tuples ->
-                toExportData(tuples.getT1(), tuples.getT2(), tuples.getT3(), tuples.getT4()));
+                toExportData(tuples.getT1(), tuples.getT2(), tuples.getT3(), tuples.getT4(), tuples.getT5()));
     }
 
     private IssueExportData toExportData(SearchResponse searchResponse, BranchResponse branchResponse,
-                                               MeasureResponse measureResponse, HotspotResponse hotspotResponse) {
+                                               MeasureResponse measureResponse, HotspotResponse toReviewHotspotResponse,
+                                         HotspotResponse acknowledgedHotspotResponse) {
         List<IssueDto> issueDtos = ofNullable(searchResponse.getIssues())
-                .map(issues -> toListIssuesDto(issues, hotspotResponse))
+                .map(issues -> toListIssuesDto(issues, toReviewHotspotResponse))
                 .orElseGet(List::of);
 
         String branchName = ofNullable(branchResponse.getBranches())
                 .flatMap(branches -> branches.stream().findFirst())
                 .map(Branch::getName)
                 .orElse(EMPTY);
+
+        //Tổng số hotspots: Chuyển sang lấy từ Tab Hotspots =  (To review) + Acknowledge
+        int securityHotspot = addExact(toReviewHotspotResponse.getPaging().getTotal(), acknowledgedHotspotResponse.getPaging().getTotal());
+
+        //= Tổng số Acknowledge / Tổng số hotspots
+        double hotspotReviewedPercentage = securityHotspot == 0 ? 0.0
+                : (double) acknowledgedHotspotResponse.getPaging().getTotal() / securityHotspot;
+
+        //Lấy từ tỉ lệ coverage trong tab Measures.Coverage.Coverage
+        Double coverage = ofNullable(measureResponse.getComponent())
+                .map(ComponentMeasures::getMeasures)
+                .stream()
+                .flatMap(List::stream)
+                .filter(measure -> "coverage".equals(measure.getMetric()))
+                .findFirst()
+                .map(Measure::getValue)
+                .map(Double::parseDouble)
+                .map(coveragePercentage -> coveragePercentage / 100.0)
+                .orElse(0.0);
 
         Double duplications = ofNullable(measureResponse.getComponent())
                 .map(ComponentMeasures::getMeasures)
@@ -97,11 +125,15 @@ public class SonarServiceImpl implements SonarService {
                 .map(Integer::parseInt)
                 .orElse(0);
 
-        Integer coveredLine = subtractExact(linesOfCode, uncoveredLines);
+        //= Tab Measures.Coverage.Lines to Cover - Measures.Coverage.Uncovered Lines
+        Integer coveredLine = subtractExact(linesToCover, uncoveredLines);
 
         return IssueExportData.builder()
                 .issues(issueDtos)
                 .branch(branchName)
+                .securityHotspot(securityHotspot)
+                .hotspotReviewed(hotspotReviewedPercentage)
+                .coverage(coverage)
                 .duplications(duplications)
                 .linesOfCode(linesOfCode)
                 .linesToCover(linesToCover)

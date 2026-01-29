@@ -7,7 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 import java.time.Instant;
@@ -38,8 +42,20 @@ public class ReportController {
     @PostMapping("/sonar/export")
     public Mono<ResponseEntity<byte[]>> generateReport(@RequestBody ReportRequest request) {
         log.info("[ReportController] Generating report for {}", request.repositories());
+        long startTime = System.currentTimeMillis();
+
         return reportService.generate(request)
-                .map(this::toReportResponse);
+                .elapsed()
+                .doOnNext(tuple -> {
+                    long duration = tuple.getT1();
+                    log.info("[ReportController] Service generation took {} ms ({} seconds)", duration, duration / 1000.0);
+                })
+                .map(tuple -> this.toReportResponse(tuple.getT2()))
+                .doOnSuccess(response -> {
+                    long totalDuration = System.currentTimeMillis() - startTime;
+                    log.info("[ReportController] Total controller time took {} ms ({} seconds) for {} repositories",
+                            totalDuration, totalDuration / 1000.0, request.repositories().size());
+                });
     }
 
     private ResponseEntity<byte[]> toReportResponse(byte[] file) {

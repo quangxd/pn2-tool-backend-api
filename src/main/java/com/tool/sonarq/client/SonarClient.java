@@ -84,6 +84,19 @@ public class SonarClient {
                 );
     }
 
+    public Mono<HotspotResponse> queryHotspotsWithStatusAndResolution(String repository, String cookie, String status, String resolution) {
+        return webClient.get()
+                .uri(uri -> buildHotspotsWithStatusAndResolutionUri(uri, repository, status, resolution))
+                .header(HttpHeaders.COOKIE, cookie)
+                .exchangeToMono(response -> toHotspotResponseMono(response, repository))
+                .doOnNext(response -> log.info("Hotspots with status {}, resolution {} retrieved for repository: {}",
+                        status, resolution, repository))
+                .doOnError(
+                        e -> log.error("Failed to fetch hotspots with status {}, resolution {} for {}: {}",
+                                status, resolution, repository, e.getMessage())
+                );
+    }
+
     private URI buildQueryIssuesUri(UriBuilder uri, String repository, ReportRequest reportRequest) {
         URI issuesUri = uri.path("/api/issues/search")
                 .queryParam("components", repository)
@@ -130,6 +143,20 @@ public class SonarClient {
 
         log.info("hotspots search url: {}", hotspotUri);
         return hotspotUri;
+    }
+
+    private URI buildHotspotsWithStatusAndResolutionUri(UriBuilder uri, String repository, String status, String resolution) {
+        URI hotspotWithStatusUri = uri.path("/api/hotspots/search")
+                .queryParam("project", repository)
+                .queryParam("status", status)
+                .queryParam("ps", "500")
+                .queryParam("inNewCodePeriod", "false")
+                .queryParam("onlyMine", "false")
+                .queryParam("resolution", resolution)
+                .build();
+
+        log.info("hotspots search with given status url: {}", hotspotWithStatusUri);
+        return hotspotWithStatusUri;
     }
 
     private Mono<SearchResponse> toSearchResponseMono(ClientResponse response, String repository) {

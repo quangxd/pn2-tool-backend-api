@@ -2,5 +2,5 @@ server:
   port: 8080
 
 sonar:
-  base-url: http://192.168.2.158:9000
+  base-url: https://sonarqube.pamnas2.jp/
   timezone: Etc/GMT-7
