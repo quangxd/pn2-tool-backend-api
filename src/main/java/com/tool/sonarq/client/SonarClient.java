@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.String.format;
+import static java.time.Duration.ofSeconds;
 import static java.util.Optional.of;
 import static reactor.core.publisher.Mono.error;
 
@@ -33,6 +34,8 @@ import static reactor.core.publisher.Mono.error;
 @Component
 @RequiredArgsConstructor
 public class SonarClient {
+
+    private static final Integer TIME_OUT_IN_SECONDS = 30;
 
     @Value("${sonar.timezone}")
     private  String timezone;
@@ -45,6 +48,7 @@ public class SonarClient {
                 .uri(uri -> buildQueryIssuesUri(uri, repository, reportRequest))
                 .header(HttpHeaders.COOKIE, reportRequest.cookie())
                 .exchangeToMono(response -> toSearchResponseMono(response, repository))
+                .timeout(ofSeconds(TIME_OUT_IN_SECONDS))
                 .doOnNext(response -> log.info("Sonar response data retrieved for repository: {}", repository))
                 .doOnError(
                         e -> log.error("Failed to fetch response for {}: {}", repository, e.getMessage())
@@ -56,6 +60,7 @@ public class SonarClient {
                 .uri(uri -> buildQueryBranchUri(uri, repository))
                 .header(HttpHeaders.COOKIE, cookie)
                 .exchangeToMono(this::toBranchResponseMono)
+                .timeout(ofSeconds(TIME_OUT_IN_SECONDS))
                 .doOnNext(response -> log.info("Branch data retrieved for repository: {}", repository))
                 .doOnError(
                         e -> log.error("Failed to fetch branch for {}: {}", repository, e.getMessage())
@@ -67,6 +72,7 @@ public class SonarClient {
                 .uri(uri -> buildQueryMeasuresUri(uri, repository))
                 .header(HttpHeaders.COOKIE, cookie)
                 .exchangeToMono(response -> toMeasureResponseMono(response, repository))
+                .timeout(ofSeconds(TIME_OUT_IN_SECONDS))
                 .doOnNext(response -> log.info("Measures data retrieved for repository: {}", repository))
                 .doOnError(
                         e -> log.error("Failed to fetch measures for {}: {}", repository, e.getMessage())
@@ -78,6 +84,7 @@ public class SonarClient {
                 .uri(uri -> buildHotspotsUri(uri, repository))
                 .header(HttpHeaders.COOKIE, cookie)
                 .exchangeToMono(response -> toHotspotResponseMono(response, repository))
+                .timeout(ofSeconds(TIME_OUT_IN_SECONDS))
                 .doOnNext(response -> log.info("Hotspots retrieved for repository: {}", repository))
                 .doOnError(
                         e -> log.error("Failed to fetch hotspots for {}: {}", repository, e.getMessage())
@@ -89,6 +96,7 @@ public class SonarClient {
                 .uri(uri -> buildHotspotsWithStatusAndResolutionUri(uri, repository, status, resolution))
                 .header(HttpHeaders.COOKIE, cookie)
                 .exchangeToMono(response -> toHotspotResponseMono(response, repository))
+                .timeout(ofSeconds(TIME_OUT_IN_SECONDS))
                 .doOnNext(response -> log.info("Hotspots with status {}, resolution {} retrieved for repository: {}",
                         status, resolution, repository))
                 .doOnError(

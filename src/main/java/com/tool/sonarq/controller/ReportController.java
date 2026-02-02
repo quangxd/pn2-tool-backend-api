@@ -1,17 +1,13 @@
 package com.tool.sonarq.controller;
 
 import com.tool.sonarq.dto.model.request.ReportRequest;
-import com.tool.sonarq.service.impl.ReportServiceImpl;
+import com.tool.sonarq.util.ReportServiceFactory;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.time.Instant;
@@ -27,9 +23,9 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 @RequiredArgsConstructor
 public class ReportController {
 
-    private final ReportServiceImpl reportService;
+    private final ReportServiceFactory reportServiceFactory;
 
-    @GetMapping("/sonar/health")
+    @GetMapping("/health")
     public ResponseEntity<Map<String, Object>> liveness() {
         return ResponseEntity.ok(
                 Map.of(
@@ -39,18 +35,19 @@ public class ReportController {
         );
     }
 
-    @PostMapping("/sonar/export")
-    public Mono<ResponseEntity<byte[]>> generateReport(@RequestBody ReportRequest request) {
-        log.info("[ReportController] Generating report for {}", request.repositories());
+    @PostMapping("/report/export")
+    public Mono<ResponseEntity<byte[]>> export(@RequestParam(defaultValue = "sonarq", required = false) String type,
+                                               @RequestBody ReportRequest request) {
+        log.info("[ReportController] Generating {} report for {}", type, request.repositories());
         long startTime = System.currentTimeMillis();
 
-        return reportService.generate(request)
+        return reportServiceFactory.getByType(type).generate(request)
                 .elapsed()
                 .doOnNext(tuple -> {
                     long duration = tuple.getT1();
                     log.info("[ReportController] Service generation took {} ms ({} seconds)", duration, duration / 1000.0);
                 })
-                .map(tuple -> this.toReportResponse(tuple.getT2()))
+                .map(tuple -> this.toReportResponse(type, tuple.getT2()))
                 .doOnSuccess(response -> {
                     long totalDuration = System.currentTimeMillis() - startTime;
                     log.info("[ReportController] Total controller time took {} ms ({} seconds) for {} repositories",
@@ -58,8 +55,8 @@ public class ReportController {
                 });
     }
 
-    private ResponseEntity<byte[]> toReportResponse(byte[] file) {
-        String filename = format("sonarq_report_%s.xlsx", now().format(ofPattern("dd_MM_yyyy_HH_mm_ss")));
+    private ResponseEntity<byte[]> toReportResponse(String type, byte[] file) {
+        String filename = format("%s_report_%s.xlsx", type, now().format(ofPattern("dd_MM_yyyy_HH_mm_ss")));
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION,

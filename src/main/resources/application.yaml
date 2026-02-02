@@ -1,6 +1,11 @@
 server:
   port: 8080
 
+spring:
+  mvc:
+    async:
+      request-timeout: 60000
+
 sonar:
   base-url: https://sonarqube.pamnas2.jp/
   timezone: Etc/GMT-7

@@ -3,17 +3,13 @@ package com.tool.sonarq.service.impl;
 import com.tool.sonarq.client.SonarClient;
 import com.tool.sonarq.dto.IssueDto;
 import com.tool.sonarq.dto.IssueExportData;
-import com.tool.sonarq.dto.model.Branch;
-import com.tool.sonarq.dto.model.ComponentMeasures;
-import com.tool.sonarq.dto.model.Hotspot;
-import com.tool.sonarq.dto.model.Issue;
-import com.tool.sonarq.dto.model.Measure;
+import com.tool.sonarq.dto.model.*;
 import com.tool.sonarq.dto.model.request.ReportRequest;
 import com.tool.sonarq.dto.model.response.BranchResponse;
 import com.tool.sonarq.dto.model.response.HotspotResponse;
 import com.tool.sonarq.dto.model.response.MeasureResponse;
 import com.tool.sonarq.dto.model.response.SearchResponse;
-import com.tool.sonarq.service.SonarService;
+import com.tool.sonarq.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -29,12 +25,13 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static reactor.core.publisher.Mono.zip;
 
 @Slf4j
-@Service
+@Service("sonarServiceImpl")
 @RequiredArgsConstructor
-public class SonarServiceImpl implements SonarService {
+public class SonarServiceImpl implements ClientService {
 
     private static final String REVIEWED = "REVIEWED";
     private static final String ACKNOWLEDGED = "ACKNOWLEDGED";
+
     private final SonarClient sonarClient;
 
     @Override
