@@ -1,0 +1,33 @@
+package com.tool.sonarq.service;
+
+import com.tool.sonarq.dto.IssueExportData;
+import com.tool.sonarq.dto.model.request.ReportRequest;
+import com.tool.sonarq.exception.BizException;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
+
+import java.util.Map;
+
+@Service
+@RequiredArgsConstructor
+public abstract class AbstractReportService implements ReportService {
+
+    protected static final int CONCURRENCY = 5;
+
+    protected final ClientService clientService;
+    protected final ExcelService excelService;
+
+    @Override
+    public Mono<byte[]> generate(ReportRequest reportRequest) {
+        return innerHandler(reportRequest)
+                .filter(data -> !data.isEmpty())
+                .flatMap(data -> excelService.generateReport(data, reportRequest.rowStartIndex()))
+                .switchIfEmpty(Mono.error(new BizException("No data found to export")));
+    }
+
+    protected abstract Mono<Map<String, IssueExportData>> innerHandler(ReportRequest reportRequest);
+
+    protected abstract Mono<Map.Entry<String, IssueExportData>> toIssueExportDataEntry(String repositoryName, ReportRequest reportRequest,
+                                                                                       ClientService clientService);
+}
