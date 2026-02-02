@@ -18,6 +18,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
+import static com.tool.sonarq.service.ClientService.SONA_CLIENT_SERVICE_IMPL;
 import static java.lang.Math.addExact;
 import static java.lang.Math.subtractExact;
 import static java.util.Optional.ofNullable;
@@ -25,9 +26,9 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static reactor.core.publisher.Mono.zip;
 
 @Slf4j
-@Service("sonarServiceImpl")
+@Service(SONA_CLIENT_SERVICE_IMPL)
 @RequiredArgsConstructor
-public class SonarServiceImpl implements ClientService {
+public class SonarClientServiceImpl implements ClientService {
 
     private static final String REVIEWED = "REVIEWED";
     private static final String ACKNOWLEDGED = "ACKNOWLEDGED";
