@@ -23,21 +23,18 @@ public class SonarReportServiceImpl extends AbstractReportService {
     }
 
     @Override
-    protected Mono<Map<String, IssueExportData>> innerHandler(ReportRequest reportRequest) {
+    protected Mono<Map<String, IssueExportData>> processGenerate(ReportRequest reportRequest) {
         return fromIterable(reportRequest.repositories())
-                .flatMap(repo -> toIssueExportDataEntry(repo, reportRequest, clientService), CONCURRENCY)
+                .flatMap(repositoryName ->
+                        toIssueExportDataEntryMono(repositoryName, reportRequest, clientService), CONCURRENCY)
                 .collectMap(Map.Entry::getKey, Map.Entry::getValue);
     }
 
-    protected Mono<Map.Entry<String, IssueExportData>> toIssueExportDataEntry(String repositoryName,
+    private Mono<Map.Entry<String, IssueExportData>> toIssueExportDataEntryMono(String repositoryName,
                                                                               ReportRequest reportRequest,
                                                                               ClientService clientService) {
         return clientService.fetchIssues(repositoryName, reportRequest)
                 .filter(issueExportData -> !isEmptyIssues(issueExportData))
                 .map(issues -> Map.entry(repositoryName, issues));
-    }
-
-    protected boolean isEmptyIssues(IssueExportData issueExportData) {
-        return issueExportData.getIssues().isEmpty();
     }
 }

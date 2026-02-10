@@ -17,20 +17,19 @@ import java.util.Map;
 public abstract class AbstractReportService implements ReportService {
 
     protected static final int CONCURRENCY = 5;
-
     protected final ClientService clientService;
     protected final ExcelService excelService;
 
     @Override
     public Mono<byte[]> generate(ReportRequest reportRequest) {
-        return innerHandler(reportRequest)
-                .filter(data -> !data.isEmpty())
+        return processGenerate(reportRequest)
                 .flatMap(data -> excelService.generateReport(data, reportRequest.rowStartIndex()))
                 .switchIfEmpty(Mono.error(new BizException("No data found to export")));
     }
 
-    protected abstract Mono<Map<String, IssueExportData>> innerHandler(ReportRequest reportRequest);
+    protected abstract Mono<Map<String, IssueExportData>> processGenerate(ReportRequest reportRequest);
 
-    protected abstract Mono<Map.Entry<String, IssueExportData>> toIssueExportDataEntry(String repositoryName, ReportRequest reportRequest,
-                                                                                       ClientService clientService);
+    protected boolean isEmptyIssues(IssueExportData issueExportData) {
+        return issueExportData.getIssues().isEmpty();
+    }
 }
