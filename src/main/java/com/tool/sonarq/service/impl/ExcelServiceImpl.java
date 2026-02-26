@@ -50,18 +50,16 @@ public class ExcelServiceImpl implements ExcelService {
     public Mono<byte[]> generateReport(Map<String, IssueExportData> dataMap, Integer rowStartIndex) {
         return fromCallable(() -> createExcel(dataMap, rowStartIndex))
                 .subscribeOn(Schedulers.boundedElastic())
-                .onErrorMap(IOException.class,
-                        ex -> new BizException(ex.getMessage())
-                );
+                .onErrorMap(e -> new BizException(e.getMessage()));
     }
 
-    private byte[] createExcel(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException {
+    private byte[] createExcel(Map<String, IssueExportData> dataMap, Integer rowStartIndex) throws IOException, BizException {
         try (InputStream is =
                      of(getClass())
                              .map(Class::getClassLoader)
                              .map(classLoader ->
                                      classLoader.getResourceAsStream("templates/sonarqube_export_template.xlsx"))
-                             .orElseThrow(() -> new RuntimeException("No templates found!"));
+                             .orElseThrow(() -> new BizException("No templates found!"));
 
              XSSFWorkbook workbook = new XSSFWorkbook(is);
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {

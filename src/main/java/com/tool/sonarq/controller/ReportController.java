@@ -57,7 +57,9 @@ public class ReportController {
                     long totalDuration = System.currentTimeMillis() - startTime;
                     log.info("[ReportController] Total controller time took {} ms ({} seconds) for {} repositories",
                             totalDuration, totalDuration / 1000.0, request.repositories().size());
-                });
+                })
+                .doOnError(e -> log.error("[ReportController] Failed to generate {} report for {}",
+                        type, request.repositories()));
     }
 
     private ResponseEntity<byte[]> toReportResponse(String type, byte[] file) {

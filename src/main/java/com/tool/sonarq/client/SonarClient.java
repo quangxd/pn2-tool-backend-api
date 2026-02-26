@@ -8,6 +8,7 @@ import com.tool.sonarq.dto.model.response.BranchResponse;
 import com.tool.sonarq.dto.model.response.HotspotResponse;
 import com.tool.sonarq.dto.model.response.MeasureResponse;
 import com.tool.sonarq.dto.model.response.SearchResponse;
+import com.tool.sonarq.exception.BizException;
 import com.tool.sonarq.util.FileReader;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +28,6 @@ import java.util.List;
 import static java.lang.String.format;
 import static java.time.Duration.ofSeconds;
 import static java.util.Optional.of;
-import static reactor.core.publisher.Mono.error;
 
 
 @Slf4j
@@ -175,17 +175,10 @@ public class SonarClient {
         }
 
         return response.bodyToMono(byte[].class)
-                .doOnNext(bytes ->
-                        log.info(
-                                "Sonar response size = {} KB, repository = {}",
-                                bytes.length / 1024,
-                                repository
-                        )
-                )
-                .switchIfEmpty(error(
-                        new IllegalStateException("Sonar response is empty for repository " + repository)
-                ))
-                .map(this::toSearchResponse);
+                .doOnNext(bytes -> log.info("Sonar response size = {} KB, repository = {}",
+                                bytes.length / 1024, repository))
+                .map(this::toSearchResponse)
+                .onErrorMap(e -> new BizException(e.getMessage()));
     }
 
     private SearchResponse toSearchResponse(byte[] bytes) {
@@ -205,17 +198,10 @@ public class SonarClient {
         }
 
         return response.bodyToMono(byte[].class)
-                .doOnNext(bytes ->
-                        log.info(
-                                "Branch response size = {} KB, length = {}",
-                                bytes.length / 1024,
-                                bytes.length
-                        )
-                )
-                .switchIfEmpty(error(
-                        new IllegalStateException("Branch response is empty")
-                ))
-                .map(this::toBranchResponse);
+                .doOnNext(bytes -> log.info("Branch response size = {} KB, length = {}",
+                                bytes.length / 1024, bytes.length))
+                .map(this::toBranchResponse)
+                .onErrorMap(e -> new BizException(e.getMessage()));
     }
 
     private BranchResponse toBranchResponse(byte[] bytes) {
@@ -236,10 +222,8 @@ public class SonarClient {
         return response.bodyToMono(byte[].class)
                 .doOnNext(bytes -> log.info("Sonar Measures response size = {} KB, repository = {}",
                         bytes.length / 1024, repository))
-                .switchIfEmpty(
-                        error(new IllegalStateException("Sonar Measures response is empty for repository " + repository))
-                )
-                .map(this::toMeasureResponse);
+                .map(this::toMeasureResponse)
+                .onErrorMap(e -> new BizException(e.getMessage()));
     }
 
     private MeasureResponse toMeasureResponse(byte[] bytes) {
@@ -258,10 +242,8 @@ public class SonarClient {
         return response.bodyToMono(byte[].class)
                 .doOnNext(bytes -> log.info("Sonar Hotspot response size = {} KB, repository = {}",
                         bytes.length / 1024, repository))
-                .switchIfEmpty(
-                        error(new IllegalStateException("Sonar Hotspot response is empty for repository " + repository))
-                )
-                .map(this::toHotspotResponse);
+                .map(this::toHotspotResponse)
+                .onErrorMap(e -> new BizException(e.getMessage()));
     }
 
     private HotspotResponse toHotspotResponse(byte[] bytes) {

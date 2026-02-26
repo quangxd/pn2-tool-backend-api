@@ -24,7 +24,7 @@ public abstract class AbstractReportService implements ReportService {
     public Mono<byte[]> generate(ReportRequest reportRequest) {
         return processGenerate(reportRequest)
                 .flatMap(data -> excelService.generateReport(data, reportRequest.rowStartIndex()))
-                .switchIfEmpty(Mono.error(new BizException("No data found to export")));
+                .onErrorMap(e -> new BizException(e.getMessage()));
     }
 
     protected abstract Mono<Map<String, IssueExportData>> processGenerate(ReportRequest reportRequest);
